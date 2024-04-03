@@ -56,9 +56,9 @@
 		<axis xyz="0 0 1" />
 		<parent link="Pelvis" />
 		<child link="SpineYawLink" />
-		<limit effort="80" lower="-1.0472" upper="1.0472" velocity = "20.0" />
+		<limit effort="150" lower="-1.0472" upper="1.0472" velocity = "9.0" />
 		<dynamics damping="0.05" friction="0.0"/>
-	</joint>
+    </joint>
 
 	<joint name="SpineRoll" type="revolute">
 		<origin rpy="0 0 0" xyz="-0.08 0 0.12" />
@@ -74,7 +74,7 @@
 		<axis xyz="0 1 0" />
 		<parent link="SpineRollLink" />
 		<child link="Torso" />
-		<limit effort="200.0" lower="-0.785398" upper="0.785398" velocity = "6.0" />
+		<limit effort="250.0" lower="-0.523599" upper="1.0472" velocity = "6.0" />
 		<dynamics damping="0.05" friction="0.0"/>
 	</joint>
 
@@ -84,7 +84,7 @@
 		<axis xyz="0 0 1" />
 		<parent link="Torso" />
 		<child link="NeckYawLink" />
-		<limit effort="80.0" lower="-1.5708" upper="1.5708" velocity = "20.0" />
+		<limit effort="20" lower="-1.5708" upper="1.5708" velocity = "20" />
 		<dynamics damping="0.05" friction="0.0"/>
 	</joint>
 
@@ -93,7 +93,7 @@
 		<axis xyz="0 1 0" />
 		<parent link="NeckYawLink" />
 		<child link="Head" />
-		<limit effort="20" lower="-1.0472" upper="1.0472" velocity = "20.0" />
+		<limit effort="20" lower="-1.0472" upper="1.0472" velocity = "20" />
 		<dynamics damping="0.05" friction="0.0"/>
 	</joint>
 
@@ -168,7 +168,7 @@
 
 	<!-- left upper arm joints -->
 	<joint name="LeftShoulderPitch" type="revolute">
-		<origin xyz="-0.011 0.113 0.227" rpy="0.698132 0.0 0.0"   />
+		<origin xyz="-0.025 0.1 0.21449" rpy="0.698132 0.0 0.0"   />
 		<axis xyz="0.0 1.0 0.0" />
 		<parent link="Torso" />
 		<child link="LeftShoulderPitchLink" />
@@ -177,11 +177,11 @@
 	</joint>
 	
 	<joint name="LeftShoulderRoll" type="revolute">
-		<origin rpy="-0.785398163 0.0 0.0" xyz="0.0 0.15676000 -0.01300000" />
+		<origin rpy="-0.698132 0.0 0.0" xyz="0.0 0.15676000 -0.01300000" />
 		<axis xyz="1 0 0" />
 		<parent link="LeftShoulderPitchLink" />
 		<child link="LeftShoulderRollLink" />
-		<limit effort="150.0" lower="-0.261799" upper="2.87979" velocity = "9.0" />
+		<limit effort="150.0" lower="-0.349066" upper="2.79253" velocity = "9.0" />
 		<dynamics damping="0.05" friction="0.0"/>
 	</joint>
 	
@@ -359,7 +359,7 @@
 	
 	<!-- Right Upper Arm Joints -->
 	<joint name="RightShoulderPitch" type="revolute">
-		<origin xyz="-0.011 -0.113 0.227" rpy="-0.698132 0.0 0.0"   />
+    <origin xyz="-0.025 -0.1 0.21449" rpy="-0.698132 0.0 0.0"   />
 		<axis xyz="0.0 1.0 0.0" />
 		<parent link="Torso" />
 		<child link="RightShoulderPitchLink" />
@@ -367,11 +367,11 @@
 		<dynamics damping="0.05" friction="0.0"/>
 	</joint>
 	<joint name="RightShoulderRoll" type="revolute">
-		<origin rpy="0.785398163 0.0 0.0" xyz="0.0 -0.15676000 -0.01300000" />
+    <origin rpy="0.698132 0.0 0.0" xyz="0.0 -0.15676000 -0.01300000" />
 		<axis xyz="1 0 0" />
 		<parent link="RightShoulderPitchLink" />
 		<child link="RightShoulderRollLink" />
-		<limit effort="1000" lower="-2.87979" upper="0.261799" velocity = "100" />
+    <limit effort="1000" lower="-2.79253" upper="0.349066" velocity = "100" />
 		<dynamics damping="0.05" friction="0.0"/>
 	</joint>
 	<joint name="RightShoulderYaw" type="revolute">
@@ -438,7 +438,7 @@
 	  <inertial>
 		<mass value="1.17068"/>
 		<origin rpy="0 0 0" xyz="-0.01053 -0.02124 -0.1052690"/>
-		<inertia ixx="-0.00787035" ixy="-1.667e-4" ixz="-0.00075945" iyy="0.00727481" iyz="-0.000988837" izz="-0.00182144" />
+		<inertia ixx="0.00787035" ixy="-1.667e-4" ixz="-0.00075945" iyy="0.00727481" iyz="-0.000988837" izz="0.00182144" />
 	  </inertial>
 	  <visual>
 		<geometry>
