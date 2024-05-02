@@ -561,7 +561,7 @@
 		<visual name="wrist_mesh">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
-				<mesh filename="package://ability-hand-description/models/wristmesh.obj"/>
+				<mesh filename="package://ability_hand_description/models/wristmesh.obj"/>
 			</geometry>
 		</visual>		
 		<inertial>	<!-- the mass and inertia here are NOT correct -->
@@ -586,7 +586,7 @@
 		<visual name="palm_mesh">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
-				<mesh filename="package://ability-hand-description/models/fb_palm_ref.obj"/>
+				<mesh filename="package://ability_hand_description/models/fb_palm_ref.obj"/>
 			</geometry>
 		</visual>		
 	</link>
@@ -602,7 +602,7 @@
 		<visual name="index_mesh_1">
 			<origin xyz = "0 0 0" rpy = "0 0 0"/>
 			<geometry>
-				<mesh filename="package://ability-hand-description/models/idx-f1.obj"/>
+				<mesh filename="package://ability_hand_description/models/idx-f1.obj"/>
 			</geometry>
 		</visual>
 	</link>
@@ -615,7 +615,7 @@
 		<visual name="index_mesh_2">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
-				<mesh filename="package://ability-hand-description/models/idx-f2.obj"/>
+				<mesh filename="package://ability_hand_description/models/idx-f2.obj"/>
 			</geometry>
 		</visual>
 	</link>	
@@ -655,7 +655,7 @@
 		<visual name="middle_mesh_1">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
-				<mesh filename="package://ability-hand-description/models/idx-f1.obj"/>
+				<mesh filename="package://ability_hand_description/models/idx-f1.obj"/>
 			</geometry>
 		</visual>
 		
@@ -669,7 +669,7 @@
 		<visual name="middle_mesh_2">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
-				<mesh filename="package://ability-hand-description/models/idx-f2.obj"/>
+				<mesh filename="package://ability_hand_description/models/idx-f2.obj"/>
 			</geometry>
 		</visual>
 	</link>
@@ -711,7 +711,7 @@
 		<visual name="ring_mesh_1">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
-				<mesh filename="package://ability-hand-description/models/idx-f1.obj"/>
+				<mesh filename="package://ability_hand_description/models/idx-f1.obj"/>
 			</geometry>
 		</visual>
 	</link>
@@ -724,7 +724,7 @@
 		<visual name="ring_mesh_2">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
-				<mesh filename="package://ability-hand-description/models/idx-f2.obj"/>
+				<mesh filename="package://ability_hand_description/models/idx-f2.obj"/>
 			</geometry>
 		</visual>		
 	</link>
@@ -764,7 +764,7 @@
 		<visual name="pinky_mesh_1">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
-				<mesh filename="package://ability-hand-description/models/idx-f1.obj"/>
+				<mesh filename="package://ability_hand_description/models/idx-f1.obj"/>
 			</geometry>
 		</visual>
 	</link>
@@ -777,7 +777,7 @@
 		<visual name="pinky_mesh_2">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
-				<mesh filename="package://ability-hand-description/models/idx-f2.obj"/>
+				<mesh filename="package://ability_hand_description/models/idx-f2.obj"/>
 			</geometry>
 		</visual>		
 	</link>
@@ -817,7 +817,7 @@
 		<visual name="thumb_mesh_1">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
-				<mesh filename="package://ability-hand-description/models/thumb-f1.obj"/>
+				<mesh filename="package://ability_hand_description/models/thumb-f1.obj"/>
 			</geometry>
 		</visual>
 		
@@ -832,7 +832,7 @@
 		<visual name="thumb_mesh_2">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
-				<mesh filename="package://ability-hand-description/models/thumb-f2-left.obj"/>
+				<mesh filename="package://ability_hand_description/models/thumb-f2-left.obj"/>
 			</geometry>
 		</visual>
 		
@@ -867,7 +867,7 @@
 		<visual name="wrist_mesh">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
-				<mesh filename="package://ability-hand-description/models/wristmesh.obj"/>
+				<mesh filename="package://ability_hand_description/models/wristmesh.obj"/>
 			</geometry>
 		</visual>		
 		<inertial>	<!-- the mass and inertia here are NOT correct -->
@@ -892,7 +892,7 @@
 		<visual name="palm_mesh">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
-				<mesh filename="package://ability-hand-description/models/fb_palm_ref_mir.obj"/>
+				<mesh filename="package://ability_hand_description/models/fb_palm_ref_mir.obj"/>
 			</geometry>
 		</visual>		
 	</link>
@@ -906,7 +906,7 @@
 		<visual name="index_mesh_1">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
-				<mesh filename="package://ability-hand-description/models/idx-f1.obj"/>
+				<mesh filename="package://ability_hand_description/models/idx-f1.obj"/>
 			</geometry>
 		</visual>
 	</link>
@@ -919,7 +919,7 @@
 		<visual name="index_mesh_2">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
-				<mesh filename="package://ability-hand-description/models/idx-f2.obj"/>
+				<mesh filename="package://ability_hand_description/models/idx-f2.obj"/>
 			</geometry>
 		</visual>
 	</link>
@@ -958,7 +958,7 @@
 		<visual name="middle_mesh_1">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
-				<mesh filename="package://ability-hand-description/models/idx-f1.obj"/>
+				<mesh filename="package://ability_hand_description/models/idx-f1.obj"/>
 			</geometry>
 		</visual>
 		
@@ -972,7 +972,7 @@
 		<visual name="middle_mesh_2">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
-				<mesh filename="package://ability-hand-description/models/idx-f2.obj"/>
+				<mesh filename="package://ability_hand_description/models/idx-f2.obj"/>
 			</geometry>
 		</visual>
 	</link>
@@ -1010,7 +1010,7 @@
 		<visual name="ring_mesh_1">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
-				<mesh filename="package://ability-hand-description/models/idx-f1.obj"/>
+				<mesh filename="package://ability_hand_description/models/idx-f1.obj"/>
 			</geometry>
 		</visual>
 	</link>
@@ -1023,7 +1023,7 @@
 		<visual name="ring_mesh_2">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
-				<mesh filename="package://ability-hand-description/models/idx-f2.obj"/>
+				<mesh filename="package://ability_hand_description/models/idx-f2.obj"/>
 			</geometry>
 		</visual>		
 	</link>
@@ -1061,7 +1061,7 @@
 		<visual name="pinky_mesh_1">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
-				<mesh filename="package://ability-hand-description/models/idx-f1.obj"/>
+				<mesh filename="package://ability_hand_description/models/idx-f1.obj"/>
 			</geometry>
 		</visual>
 		
@@ -1075,7 +1075,7 @@
 		<visual name="pinky_mesh_2">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
-				<mesh filename="package://ability-hand-description/models/idx-f2.obj"/>
+				<mesh filename="package://ability_hand_description/models/idx-f2.obj"/>
 			</geometry>
 		</visual>
 		
@@ -1114,7 +1114,7 @@
 		<visual name="thumb_mesh_1">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
-				<mesh filename="package://ability-hand-description/models/thumb-f1-mir.obj"/>
+				<mesh filename="package://ability_hand_description/models/thumb-f1-mir.obj"/>
 			</geometry>
 		</visual>
 		
@@ -1129,7 +1129,7 @@
 		<visual name="thumb_mesh_2">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
-				<mesh filename="package://ability-hand-description/models/thumb-f2-right.obj"/>
+				<mesh filename="package://ability_hand_description/models/thumb-f2-right.obj"/>
 			</geometry>
 		</visual>
 		
