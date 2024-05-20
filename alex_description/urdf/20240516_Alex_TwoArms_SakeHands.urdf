@@ -8,7 +8,14 @@
 		<origin rpy="0 0 0" xyz="0.02 0.0 -0.02"/>
 		<inertia ixx="0.0942" ixy="6.05E-06" ixz="0.000379" iyy="0.0416" iyz="3.37E-07" izz="0.112" />
 	  </inertial>
+		<visual>
+			<geometry>
+				<mesh filename="package://alex_description/meshes/Torso_Base_and_Head.obj"/>
+			</geometry>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.37"/>
+		</visual>
 	</link>
+
 
 	<!-- left upper arm joints -->
 	<joint name="LeftShoulderPitch" type="revolute">
