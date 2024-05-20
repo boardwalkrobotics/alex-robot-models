@@ -19,7 +19,7 @@
 
 	<!-- left upper arm joints -->
 	<joint name="LeftShoulderPitch" type="revolute">
-		<origin xyz="0.0 0.1 0.570" rpy="0.698132 0.0 0.0"   />
+		<origin xyz="-0.0114 0.1 0.570" rpy="0.698132 0.0 0.0"   />
 		<axis xyz="0.0 1.0 0.0" />
 		<parent link="Pelvis" />
 		<child link="LeftShoulderPitchLink" />
@@ -210,7 +210,7 @@
 	
 	<!-- Right Upper Arm Joints -->
 	<joint name="RightShoulderPitch" type="revolute">
-    <origin xyz="0.0 -0.1 0.570" rpy="-0.698132 0.0 0.0"   />
+    <origin xyz="-0.0114 -0.1 0.570" rpy="-0.698132 0.0 0.0"   />
 		<axis xyz="0.0 1.0 0.0" />
 		<parent link="Pelvis" />
 		<child link="RightShoulderPitchLink" />
