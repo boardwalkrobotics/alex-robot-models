@@ -297,7 +297,7 @@
 	
 	<link name="LeftWristYawLink">
     <inertial>
-      <mass value="1.5075249788801466"/>
+      <mass value="1.438"/>
         <origin xyz="-0.0024383302867828187 -5.246795816220965E-4 -0.1300914213150444" rpy="0 0 0"/>        
 		<inertia 
 		  ixx="0.0036746953546519796" 
@@ -318,7 +318,7 @@
 	
     <link name="LeftWristRollLink">
       <inertial>
-        <mass value="0.6953487750589724"/>
+        <mass value="0.874"/>
         <origin xyz="1.5946763939368963E-4 0.012435479395687345 0.0016553711070014143" rpy="0 0 0"/>        
 		<inertia 
 		  ixx="5.09001424971436E-4"
@@ -339,7 +339,7 @@
 	
 	<link name="LeftGripperYawLink">
 	  <inertial>
-		<mass value="0.2480"/>
+		<mass value="0.3"/>
 		<origin rpy="0 0 0" xyz="-0.00014709 -0.00037325 0.01033255"/>
 		<inertia 
 		ixx="0.00013926" 
@@ -525,7 +525,7 @@
 
 	<link name="RightGripperYawLink">
 	  <inertial>
-		<mass value="0.2480"/>
+		<mass value="0.3"/>
 		<origin rpy="0 0 0" xyz="-0.00014709 0.00037325 0.01033255"/>
 		<inertia 
 		ixx="0.00013926" 
@@ -560,8 +560,8 @@
 	<link name="RightSakePalmLink">
         <inertial>
             <mass value="0.3"/>
-            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+            <origin rpy="0 0 0" xyz="0.01 0.0 -0.06"/>
+            <inertia ixx="5e-4" ixy="0.0" ixz="0.0" iyy="3e-4" iyz="0.0" izz="3e-4" />
         </inertial>
         <visual name="RightSakePalmLinkVisual">
             <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
@@ -608,7 +608,7 @@
         <inertial>
             <mass value="0.05"/>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 3.142"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+            <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
         </inertial>
         <visual name="RIGHT_GRIPPER_ROLL1_LINK_visual">
             <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 0.0"/>
@@ -621,7 +621,7 @@
         <inertial>
             <mass value="0.05"/>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+            <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
         </inertial>
         <visual name="RIGHT_GRIPPER_ROLL1_LINK_visual">
             <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 3.142"/>
@@ -634,7 +634,7 @@
         <inertial>
             <mass value="0.05"/>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+            <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
         </inertial>
         <visual name="RIGHT_GRIPPER_ROLL2_LINK_visual">
             <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 0.0"/>
@@ -647,7 +647,7 @@
         <inertial>
             <mass value="0.05"/>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+            <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
         </inertial>
         <visual name="RIGHT_GRIPPER_ROLL1_LINK_visual">
             <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 0.0"/>
@@ -661,8 +661,8 @@
 	<link name="LeftSakePalmLink">
         <inertial>
             <mass value="0.3"/>
-            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+            <origin rpy="0 0 0" xyz="0.01 0.0 -0.06"/>
+            <inertia ixx="5e-4" ixy="0.0" ixz="0.0" iyy="3e-4" iyz="0.0" izz="3e-4" />
         </inertial>
         <visual name="LeftSakePalmLinkVisual">
             <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
@@ -709,7 +709,7 @@
         <inertial>
             <mass value="0.05"/>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+            <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
         </inertial>
         <visual name="LeftSakeBaseFingerLink1Visual">
             <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 3.142"/>
@@ -722,7 +722,7 @@
         <inertial>
             <mass value="0.05"/>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+            <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
         </inertial>
         <visual name="LeftSakeFingerTip1Visual">
             <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 3.142"/>
@@ -735,7 +735,7 @@
         <inertial>
             <mass value="0.05"/>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+            <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
         </inertial>
         <visual name="LeftSakeBaseFingerLink2Visual">
             <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 0.0"/>
@@ -748,7 +748,7 @@
         <inertial>
             <mass value="0.05"/>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+            <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
         </inertial>
         <visual name="LeftSakeFingerTip2Visual">
             <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 0.0"/>
@@ -757,4 +757,107 @@
             </geometry>
         </visual>
     </link>
+	
+    <!-- __________________________ IMUS ______________________ -->
+
+    <!-- IMU Information -->
+    <link name="LeftShoulderPitchIMULink">
+        <inertial>
+            <mass value="0"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+    </link>
+    <!-- LEFT SHOULDER PITCH IMU Information -->
+    <joint name="LeftShoulderPitchIMUJoint" type="fixed">
+        <origin rpy="-1.570796 1.570796 0" xyz="0.0174 0.06944 -0.03025"/>
+        <axis xyz="0 0 1"/>
+        <parent link="LeftShoulderPitchLink"/>
+        <child link="LeftShoulderPitchIMULink"/>
+    </joint>
+    <gazebo reference="LeftShoulderPitchIMULink">
+        <sensor name="LeftShoulderPitchIMU" type="imu">
+            <always_on>true</always_on>
+            <imu>
+                <noise>
+                    <type>gaussian</type>
+                    <rate>
+                        <mean>0</mean>
+                        <stddev>0.0002</stddev>
+                        <bias_mean>7.5e-06</bias_mean>
+                        <bias_stddev>8e-07</bias_stddev>
+                    </rate>
+                    <accel>
+                        <mean>0</mean>
+                        <stddev>0.017</stddev>
+                        <bias_mean>0.1</bias_mean>
+                        <bias_stddev>0.001</bias_stddev>
+                    </accel>
+                </noise>
+            </imu>
+        </sensor>
+    </gazebo>
+
+    <!-- ShoulderYaw IMU -->
+    <!-- Note: in CAD this is the left bicep IMU -->
+    <link name="LeftShoulderYawIMULink">
+        <inertial>
+            <mass value="0"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+    </link>
+    <joint name="LeftShoulderYawIMUJoint" type="fixed">
+        <origin rpy="-1.570796 3.1415926 -0.314159" xyz="-0.00763459 -0.0123324 -0.318"/>
+        <axis xyz="0 0 1"/>
+        <parent link="LeftShoulderYawLink"/>
+        <child link="LeftShoulderYawIMULink"/>
+    </joint>
+    <gazebo reference="LeftShoulderYawIMULink">
+        <sensor name="LeftShoulderYawIMU" type="imu">
+            <always_on>true</always_on>
+            <pose>0 0 0 0 0 0</pose>
+            <imu>
+                <noise>
+                    <type>gaussian</type>
+                    <rate>
+                        <mean>0</mean>
+                        <stddev>0.0002</stddev>
+                        <bias_mean>7.5e-06</bias_mean>
+                        <bias_stddev>8e-07</bias_stddev>
+                    </rate>
+                    <accel>
+                        <mean>0</mean>
+                        <stddev>0.017</stddev>
+                        <bias_mean>0.1</bias_mean>
+                        <bias_stddev>0.001</bias_stddev>
+                    </accel>
+                </noise>
+            </imu>
+        </sensor>
+    </gazebo>
+
+	<!-- Wrist Yaw IMU -->
+    <!-- Note: in CAD this is the left bicep IMU -->
+    <link name="LeftWristYawIMULink">
+        <inertial>
+            <mass value="0"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+    </link>
+	
+    <joint name="LeftWristYawIMUJoint" type="fixed">
+        <origin rpy="1.571  0.0 1.571" xyz="-0.033554 0.010450 -0.148527"/>
+        <axis xyz="0 0 1"/>
+        <parent link="LeftWristYawLink"/>
+        <child link="LeftWristYawIMULink"/>
+    </joint>
+	
+    <gazebo reference="LeftWristYawIMULink">
+        <sensor name="LeftWristYawIMU" type="imu">
+            <always_on>true</always_on>
+            <imu> <!-- placeholder tag for IMU --> </imu>
+        </sensor>
+    </gazebo>
 </robot>
