@@ -412,7 +412,7 @@
         <inertial>
             <mass value="0.3"/>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+            <inertia ixx="0.01" ixy="0.001" ixz="0.001" iyy="0.01" iyz="0.001" izz="0.01"/>
         </inertial>
         <visual name="RightSakePalmLinkVisual">
             <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
@@ -422,7 +422,7 @@
         </visual>
     </link>
 	
-	<joint name="RightSakeBaseFingerJoint1" type="revolute">
+	<joint name="RightSakeBaseFingerJoint1" type="fixed">
         <origin xyz="0.0 0.0299 -0.0754" rpy="-0.25 0.0 0.0"/>
         <axis xyz="1.0 0.0 0.0"/>
         <parent link="RightSakePalmLink"/>
@@ -430,7 +430,7 @@
         <dynamics damping="0.05" friction="0.0"/>
         <limit effort="1.0" lower="-0.06" upper="1.9" velocity="3.67"/>
     </joint>
-    <joint name="RightSakeKnuckle1" type="revolute">
+    <joint name="RightSakeKnuckle1" type="fixed">
         <origin xyz="0.0 0.0 -0.052" rpy="0.0 0.0 0.0"/>
         <axis xyz="1.0 0.0 0.0"/>
         <parent link="RightSakeBaseFingerLink1"/>
@@ -438,7 +438,7 @@
         <dynamics damping="0.05" friction="0.0"/>
         <limit effort="1.0" lower="-1.0" upper="0.0" velocity="3.67"/>
     </joint>
-    <joint name="RightSakeBaseFingerJoint2" type="revolute">
+    <joint name="RightSakeBaseFingerJoint2" type="fixed">
         <origin xyz="0.0 -0.0299 -0.0754" rpy="0.25 0.0 0.0"/>
         <axis xyz="-1.0 0.0 0.0"/>
         <parent link="RightSakePalmLink"/>
@@ -446,7 +446,7 @@
         <dynamics damping="0.05" friction="0.0"/>
         <limit effort="1.0" lower="-0.06" upper="1.9" velocity="3.67"/>
     </joint>
-    <joint name="RightSakeKnuckle2" type="revolute">
+    <joint name="RightSakeKnuckle2" type="fixed">
         <origin xyz="0.0 0.0 -0.052" rpy="0.0 0.0 0.0"/>
         <axis xyz="-1.0 0.0 0.0"/>
         <parent link="RightSakeBaseFingerLink2"/>
@@ -459,7 +459,7 @@
         <inertial>
             <mass value="0.05"/>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 3.142"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+            <inertia ixx="0.1" ixy="0.001" ixz="0.001" iyy="0.1" iyz="0.001" izz="0.1"/>
         </inertial>
         <visual name="RIGHT_GRIPPER_ROLL1_LINK_visual">
             <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 0.0"/>
@@ -472,7 +472,7 @@
         <inertial>
             <mass value="0.05"/>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+            <inertia ixx="0.1" ixy="0.001" ixz="0.001" iyy="0.1" iyz="0.001" izz="0.1"/>
         </inertial>
         <visual name="RIGHT_GRIPPER_ROLL1_LINK_visual">
             <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 3.142"/>
@@ -485,7 +485,7 @@
         <inertial>
             <mass value="0.05"/>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+            <inertia ixx="0.1" ixy="0.001" ixz="0.001" iyy="0.1" iyz="0.001" izz="0.1"/>
         </inertial>
         <visual name="RIGHT_GRIPPER_ROLL2_LINK_visual">
             <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 0.0"/>
@@ -498,7 +498,7 @@
         <inertial>
             <mass value="0.05"/>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+            <inertia ixx="0.1" ixy="0.001" ixz="0.001" iyy="0.1" iyz="0.001" izz="0.1"/>
         </inertial>
         <visual name="RIGHT_GRIPPER_ROLL1_LINK_visual">
             <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 0.0"/>
@@ -513,7 +513,7 @@
         <inertial>
             <mass value="0.3"/>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+            <inertia ixx="0.01" ixy="0.001" ixz="0.001" iyy="0.01" iyz="0.001" izz="0.01"/>
         </inertial>
         <visual name="LeftSakePalmLinkVisual">
             <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
@@ -523,7 +523,7 @@
         </visual>
     </link>
 	
-	<joint name="LeftSakeBaseFingerJoint1" type="revolute">
+	<joint name="LeftSakeBaseFingerJoint1" type="fixed">
         <origin xyz="0.0 0.0299 -0.0754" rpy="-0.25 0.0 0.0"/>
         <axis xyz="1.0 0.0 0.0"/>
         <parent link="LeftSakePalmLink"/>
@@ -531,7 +531,7 @@
         <dynamics damping="0.05" friction="0.0"/>
         <limit effort="1.0" lower="-0.06" upper="1.9" velocity="3.67"/>
     </joint>
-    <joint name="LeftSakeKnuckle1" type="revolute">
+    <joint name="LeftSakeKnuckle1" type="fixed">
         <origin xyz="0.0 0.0 -0.052" rpy="0.0 0.0 0.0"/>
         <axis xyz="1.0 0.0 0.0"/>
         <parent link="LeftSakeBaseFingerLink1"/>
@@ -539,7 +539,7 @@
         <dynamics damping="0.05" friction="0.0"/>
         <limit effort="1.0" lower="-1.0" upper="0.0" velocity="3.67"/>
     </joint>
-    <joint name="LeftSakeBaseFingerJoint2" type="revolute">
+    <joint name="LeftSakeBaseFingerJoint2" type="fixed">
         <origin xyz="0.0 -0.0299 -0.0754" rpy="0.25 0.0 0.0"/>
         <axis xyz="-1.0 0.0 0.0"/>
         <parent link="LeftSakePalmLink"/>
@@ -547,7 +547,7 @@
         <dynamics damping="0.05" friction="0.0"/>
         <limit effort="1.0" lower="-0.06" upper="1.9" velocity="3.67"/>
     </joint>
-    <joint name="LeftSakeKnuckle2" type="revolute">
+    <joint name="LeftSakeKnuckle2" type="fixed">
         <origin xyz="0.0 0.0 -0.052" rpy="0.0 0.0 0.0"/>
         <axis xyz="-1.0 0.0 0.0"/>
         <parent link="LeftSakeBaseFingerLink2"/>
@@ -560,7 +560,7 @@
         <inertial>
             <mass value="0.05"/>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+            <inertia ixx="0.1" ixy="0.001" ixz="0.001" iyy="0.1" iyz="0.001" izz="0.1"/>
         </inertial>
         <visual name="LeftSakeBaseFingerLink1Visual">
             <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 3.142"/>
@@ -573,7 +573,7 @@
         <inertial>
             <mass value="0.05"/>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+            <inertia ixx="0.1" ixy="0.001" ixz="0.001" iyy="0.1" iyz="0.001" izz="0.1"/>
         </inertial>
         <visual name="LeftSakeFingerTip1Visual">
             <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 3.142"/>
@@ -586,7 +586,7 @@
         <inertial>
             <mass value="0.05"/>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+            <inertia ixx="0.01" ixy="0.001" ixz="0.001" iyy="0.01" iyz="0.001" izz="0.01"/>
         </inertial>
         <visual name="LeftSakeBaseFingerLink2Visual">
             <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 0.0"/>
@@ -599,7 +599,7 @@
         <inertial>
             <mass value="0.05"/>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+            <inertia ixx="0.1" ixy="0.001" ixz="0.001" iyy="0.1" iyz="0.001" izz="0.1"/>
         </inertial>
         <visual name="LeftSakeFingerTip2Visual">
             <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 0.0"/>
