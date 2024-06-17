@@ -398,7 +398,7 @@
 	<joint name="RightGrippertAttachmentFixedJoint" type="fixed">
 		<origin rpy="0 0 0" xyz="0 0 -0.0210000"/>
 		<parent link="RightGripperYawLink"/>
-		<child link="bh280/hand_base"/>
+		<child link="RightBarrettPalmLink"/>
     </joint>
 	
 	<joint name="LeftGrippertAttachmentFixedJoint" type="fixed">
@@ -408,157 +408,157 @@
     </joint>
 
 	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-<!--	&lt;!&ndash; Right Barrett Gripper &ndash;&gt;-->
-<!--	<link name="RightBarrettPalmLink">-->
-<!--        <inertial>-->
-<!--            <mass value="0.944"/>-->
-<!--            <origin xyz="0.0 -0.00482 -0.04594" rpy="0.0 0.0 0.0"/>-->
-<!--            <inertia ixx="0.00150" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>-->
-<!--        </inertial>-->
-<!--    </link>-->
+	<!-- Right Barrett Gripper -->
+	<link name="RightBarrettPalmLink">
+        <inertial>
+            <mass value="0.944"/>
+            <origin xyz="0.0 -0.00482 -0.04594" rpy="0.0 0.0 0.0"/>
+            <inertia ixx="0.00150" ixy="-2.1617e-6" ixz="-4.765e-7" iyy="0.001223" iyz="2.018e-6" izz="0.00117"/>
+        </inertial>
+    </link>
 
-<!--	&lt;!&ndash; Right Hand Dumbbell Fixed Joint &ndash;&gt;-->
-<!--	<joint name="RightHandDumbbellAttachmentFixedJoint" type="fixed">-->
-<!--		<origin rpy="0 0 0" xyz="0 0 -0.027"/>-->
-<!--		<parent link="RightBarrettPalmLink"/>-->
-<!--		<child link="RightHandDumbbellLink"/>-->
-<!--	</joint>-->
+	<!-- Right Hand Dumbbell Fixed Joint -->
+	<joint name="RightHandDumbbellAttachmentFixedJoint" type="fixed">
+		<origin rpy="0 0 0" xyz="0 0 -0.027"/>
+		<parent link="RightBarrettPalmLink"/>
+		<child link="RightHandDumbbellLink"/>
+	</joint>
 
-<!--	&lt;!&ndash; Right Hand Dumbbell &ndash;&gt;-->
-<!--	<link name="RightHandDumbbellLink">-->
-<!--		<inertial>-->
-<!--			<mass value="2.676"/>-->
-<!--			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>-->
-<!--			<inertia ixx="0.02989362" ixy="0.0" ixz="0.0" iyy="0.05504903" iyz="0.0" izz="0.05504903"/>-->
-<!--		</inertial>-->
-<!--	</link>-->
+	<!-- Right Hand Dumbbell -->
+	<link name="RightHandDumbbellLink">
+		<inertial>
+			<mass value="2.676"/>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<inertia ixx="0.02989362" ixy="0.0" ixz="0.0" iyy="0.05504903" iyz="0.0" izz="0.05504903"/>
+		</inertial>
+	</link>
 	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 	<!-- ~~~~~~~~~~ Right Barret Hand ~~~~~~~~~~ -->
-	<link name="bh280/hand_base">
-		<inertial>
-			<origin xyz="5.0019e-005 -0.0044561 0.037268"/>
-			<mass value="0.60858"/>
-			<inertia
-					ixx="0.0006986" ixy="2.7577e-007" ixz="-7.8138e-007"
-					iyy="0.00050354" iyz="-6.44e-005"
-					izz="0.00062253"/>
-		</inertial>
-		<visual>
-			<origin xyz="0 0 0" rpy="0.0 0 0"/>
-			<geometry>
-				<mesh filename="package://barrett_description/meshes/bh280/hand_base.dae"/>
-			</geometry>
-			<material name="">
-				<color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1"/>
-			</material>
-		</visual>
-		<collision>
-			<geometry>
-				<mesh filename="package://barrett_description/meshes/bh280/hand_base_collision.STL"/>
-			</geometry>
-		</collision>
-	</link>
+<!--	<link name="bh280/hand_base">-->
+<!--		<inertial>-->
+<!--			<origin xyz="5.0019e-005 -0.0044561 0.037268"/>-->
+<!--			<mass value="0.60858"/>-->
+<!--			<inertia-->
+<!--					ixx="0.0006986" ixy="2.7577e-007" ixz="-7.8138e-007"-->
+<!--					iyy="0.00050354" iyz="-6.44e-005"-->
+<!--					izz="0.00062253"/>-->
+<!--		</inertial>-->
+<!--		<visual>-->
+<!--			<origin xyz="0 0 0" rpy="0.0 0 0"/>-->
+<!--			<geometry>-->
+<!--				<mesh filename="package://barrett_description/meshes/bh280/hand_base.dae"/>-->
+<!--			</geometry>-->
+<!--			<material name="">-->
+<!--				<color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1"/>-->
+<!--			</material>-->
+<!--		</visual>-->
+<!--		<collision>-->
+<!--			<geometry>-->
+<!--				<mesh filename="package://barrett_description/meshes/bh280/hand_base_collision.STL"/>-->
+<!--			</geometry>-->
+<!--		</collision>-->
+<!--	</link>-->
 
-	<link name="bh280/finger0_0">
-		<inertial>
-			<origin xyz="0.030616 -7.3219e-005 -0.011201"/>
-			<mass value="0.14109"/>
-			<inertia
-					ixx="2.0672e-005" ixy="2.6024e-007" ixz="6.3481e-006"
-					iyy="7.4105e-005" iyz="1.7118e-008"
-					izz="6.8207e-005"/>
-		</inertial>
-		<visual>
-			<origin xyz="0 0 0" rpy="0 0 0"/>
-			<geometry>
-				<mesh filename="package://barrett_description/meshes/bh280/finger0_0.dae"/>
-			</geometry>
-			<material name="">
-				<color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1"/>
-			</material>
-		</visual>
-		<collision>
-			<geometry>
-				<mesh filename="package://barrett_description/meshes/bh280/finger0_0_collision.STL"/>
-			</geometry>
-		</collision>
-	</link>
+<!--	<link name="bh280/finger0_0">-->
+<!--		<inertial>-->
+<!--			<origin xyz="0.030616 -7.3219e-005 -0.011201"/>-->
+<!--			<mass value="0.14109"/>-->
+<!--			<inertia-->
+<!--					ixx="2.0672e-005" ixy="2.6024e-007" ixz="6.3481e-006"-->
+<!--					iyy="7.4105e-005" iyz="1.7118e-008"-->
+<!--					izz="6.8207e-005"/>-->
+<!--		</inertial>-->
+<!--		<visual>-->
+<!--			<origin xyz="0 0 0" rpy="0 0 0"/>-->
+<!--			<geometry>-->
+<!--				<mesh filename="package://barrett_description/meshes/bh280/finger0_0.dae"/>-->
+<!--			</geometry>-->
+<!--			<material name="">-->
+<!--				<color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1"/>-->
+<!--			</material>-->
+<!--		</visual>-->
+<!--		<collision>-->
+<!--			<geometry>-->
+<!--				<mesh filename="package://barrett_description/meshes/bh280/finger0_0_collision.STL"/>-->
+<!--			</geometry>-->
+<!--		</collision>-->
+<!--	</link>-->
 
-	<joint name="bh280/j00" type="fixed">
-		<origin xyz="-0.025 0 0.0754000000000003" rpy="-9.27906974436996E-30 -2.56739074444568E-16 -1.5707963267949"/>
-		<parent link="bh280/hand_base"/>
-		<child link="bh280/finger0_0"/>
-		<axis xyz="0 0 -1"/>
-		<limit effort="0" lower="0" upper="3.14159265359" velocity="2.0"/>
-	</joint>
+<!--	<joint name="bh280/j00" type="fixed">-->
+<!--		<origin xyz="-0.025 0 0.0754000000000003" rpy="-9.27906974436996E-30 -2.56739074444568E-16 -1.5707963267949"/>-->
+<!--		<parent link="bh280/hand_base"/>-->
+<!--		<child link="bh280/finger0_0"/>-->
+<!--		<axis xyz="0 0 -1"/>-->
+<!--		<limit effort="0" lower="0" upper="3.14159265359" velocity="2.0"/>-->
+<!--	</joint>-->
 
-	<link name="bh280/finger0_1">
-		<inertial>
-			<origin xyz="0.023133 0.00078642 0.00052792"/>
-			<mass value="0.062139"/>
-			<inertia
-					ixx="4.8162e-006" ixy="5.7981e-007" ixz="-7.2483e-007"
-					iyy="4.3317e-005" iyz="-2.6653e-009"
-					izz="4.4441e-005"/>
-		</inertial>
-		<visual>
-			<origin xyz="0 0 0" rpy="0 0 0"/>
-			<geometry>
-				<mesh filename="package://barrett_description/meshes/bh280/finger0_1.dae"/>
-			</geometry>
-			<material name="">
-				<color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1"/>
-			</material>
-		</visual>
-		<collision>
-			<geometry>
-				<mesh filename="package://barrett_description/meshes/bh280/finger0_1_collision.STL"/>
-			</geometry>
-		</collision>
-	</link>
+<!--	<link name="bh280/finger0_1">-->
+<!--		<inertial>-->
+<!--			<origin xyz="0.23133 0.00078642 0.00052792"/>-->
+<!--			<mass value="0.062139"/>-->
+<!--			<inertia-->
+<!--					ixx="4.8162e-006" ixy="5.7981e-007" ixz="-7.2483e-007"-->
+<!--					iyy="4.3317e-005" iyz="-2.6653e-009"-->
+<!--					izz="4.4441e-005"/>-->
+<!--		</inertial>-->
+<!--		<visual>-->
+<!--			<origin xyz="0 0 0" rpy="0 0 0"/>-->
+<!--			<geometry>-->
+<!--				<mesh filename="package://barrett_description/meshes/bh280/finger0_1.dae"/>-->
+<!--			</geometry>-->
+<!--			<material name="">-->
+<!--				<color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1"/>-->
+<!--			</material>-->
+<!--		</visual>-->
+<!--		<collision>-->
+<!--			<geometry>-->
+<!--				<mesh filename="package://barrett_description/meshes/bh280/finger0_1_collision.STL"/>-->
+<!--			</geometry>-->
+<!--		</collision>-->
+<!--	</link>-->
 
-	<joint name="bh280/j01" type="fixed">
-		<origin xyz="0.0500000000000007 0.000799999999999971 0" rpy="1.5707963267949 0 0"/>
-		<parent link="bh280/finger0_0"/>
-		<child link="bh280/finger0_1"/>
-		<axis xyz="0 0 1"/>
-		<limit effort="0" lower="0" upper="2.44346095279" velocity="2.0"/>
-	</joint>
+<!--	<joint name="bh280/j01" type="fixed">-->
+<!--		<origin xyz="0.0500000000000007 0.000799999999999971 0" rpy="1.5707963267949 0 0"/>-->
+<!--		<parent link="bh280/finger0_0"/>-->
+<!--		<child link="bh280/finger0_1"/>-->
+<!--		<axis xyz="0 0 1"/>-->
+<!--		<limit effort="0" lower="0" upper="2.44346095279" velocity="2.0"/>-->
+<!--	</joint>-->
 
-	<link name="bh280/finger0_2">
-		<inertial>
-			<origin xyz="0.02295 0.0010739 0.00041752"/>
-			<mass value="0.04166"/>
-			<inertia
-					ixx="3.1199e-006" ixy="4.5115e-007" ixz="-2.9813e-007"
-					iyy="1.6948e-005" iyz="-1.8635e-008"
-					izz="1.5809e-005"/>
-		</inertial>
-		<visual>
-			<origin xyz="0 0 0" rpy="0 0 0"/>
-			<geometry>
-				<mesh filename="package://barrett_description/meshes/bh280/finger0_2.dae"/>
-			</geometry>
-			<material name="">
-				<color rgba="0.898039215686275 0.917647058823529 0.929411764705882 1"/>
-			</material>
-		</visual>
-		<collision>
-			<geometry>
-				<mesh filename="package://barrett_description/meshes/bh280/finger0_2_collision.STL"/>
-			</geometry>
-		</collision>
-	</link>
+<!--	<link name="bh280/finger0_2">-->
+<!--		<inertial>-->
+<!--			<origin xyz="0.02295 0.0010739 0.00041752"/>-->
+<!--			<mass value="0.04166"/>-->
+<!--			<inertia-->
+<!--					ixx="3.1199e-006" ixy="4.5115e-007" ixz="-2.9813e-007"-->
+<!--					iyy="1.6948e-005" iyz="-1.8635e-008"-->
+<!--					izz="1.5809e-005"/>-->
+<!--		</inertial>-->
+<!--		<visual>-->
+<!--			<origin xyz="0 0 0" rpy="0 0 0"/>-->
+<!--			<geometry>-->
+<!--				<mesh filename="package://barrett_description/meshes/bh280/finger0_2.dae"/>-->
+<!--			</geometry>-->
+<!--			<material name="">-->
+<!--				<color rgba="0.898039215686275 0.917647058823529 0.929411764705882 1"/>-->
+<!--			</material>-->
+<!--		</visual>-->
+<!--		<collision>-->
+<!--			<geometry>-->
+<!--				<mesh filename="package://barrett_description/meshes/bh280/finger0_2_collision.STL"/>-->
+<!--			</geometry>-->
+<!--		</collision>-->
+<!--	</link>-->
 
-	<joint name="bh280/j02" type="fixed">
-		<origin xyz="0.069935684739622 0.00300000000000003 0.000200000000006934" rpy="-3.77533479986348E-14 -4.45260733378639E-14 0.698131700822416"/>
-		<parent link="bh280/finger0_1"/>
-		<child link="bh280/finger0_2"/>
-		<axis xyz="0 0 1"/>
-		<limit effort="0" lower="0" upper="0.837758040957" velocity="2.0"/>
-		<mimic joint="bh280/j01" multiplier="0.321428571429" offset="0.0"/>
-	</joint>
+<!--	<joint name="bh280/j02" type="fixed">-->
+<!--		<origin xyz="0.069935684739622 0.00300000000000003 0.000200000000006934" rpy="-3.77533479986348E-14 -4.45260733378639E-14 0.698131700822416"/>-->
+<!--		<parent link="bh280/finger0_1"/>-->
+<!--		<child link="bh280/finger0_2"/>-->
+<!--		<axis xyz="0 0 1"/>-->
+<!--		<limit effort="0" lower="0" upper="0.837758040957" velocity="2.0"/>-->
+<!--		<mimic joint="bh280/j01" multiplier="0.321428571429" offset="0.0"/>-->
+<!--	</joint>-->
 
 <!--	<link name="bh280/finger1_0">-->
 <!--		<inertial>-->
