@@ -394,20 +394,14 @@
 	  </visual>
 	</link>
 
-	<!-- Gripper Fixed Joints -->
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<!-- Right Gripper Fixed Joints -->
 	<joint name="RightGrippertAttachmentFixedJoint" type="fixed">
 		<origin rpy="0 0 0" xyz="0 0 -0.0210000"/>
 		<parent link="RightGripperYawLink"/>
 		<child link="RightBarrettPalmLink"/>
-    </joint>
-	
-	<joint name="LeftGrippertAttachmentFixedJoint" type="fixed">
-		<origin rpy="0 0 0" xyz="0 0 -0.0210000"/>
-		<parent link="LeftGripperYawLink"/>
-		<child link="LeftSakePalmLink"/>
-    </joint>
+	</joint>
 
-	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 	<!-- Right Barrett Gripper -->
 	<link name="RightBarrettPalmLink">
         <inertial>
@@ -417,21 +411,21 @@
         </inertial>
     </link>
 
-	<!-- Right Hand Dumbbell Fixed Joint -->
-	<joint name="RightHandDumbbellAttachmentFixedJoint" type="fixed">
-		<origin rpy="0 0 0" xyz="0 0 -0.027"/>
-		<parent link="RightBarrettPalmLink"/>
-		<child link="RightHandDumbbellLink"/>
-	</joint>
+<!--	&lt;!&ndash; Right Hand Dumbbell Fixed Joint &ndash;&gt;-->
+<!--	<joint name="RightHandDumbbellAttachmentFixedJoint" type="fixed">-->
+<!--		<origin rpy="0 0 0" xyz="0 0 -0.027"/>-->
+<!--		<parent link="RightBarrettPalmLink"/>-->
+<!--		<child link="RightHandDumbbellLink"/>-->
+<!--	</joint>-->
 
-	<!-- Right Hand Dumbbell -->
-	<link name="RightHandDumbbellLink">
-		<inertial>
-			<mass value="2.676"/>
-			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-			<inertia ixx="0.00747341" ixy="0.0" ixz="0.0" iyy="0.04383892" iyz="0.0" izz="0.04383892"/>
-		</inertial>
-	</link>
+<!--	&lt;!&ndash; Right Hand Dumbbell &ndash;&gt;-->
+<!--	<link name="RightHandDumbbellLink">-->
+<!--		<inertial>-->
+<!--			<mass value="2.676"/>-->
+<!--			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>-->
+<!--			<inertia ixx="0.00747341" ixy="0.0" ixz="0.0" iyy="0.04383892" iyz="0.0" izz="0.04383892"/>-->
+<!--		</inertial>-->
+<!--	</link>-->
 	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 	<!-- ~~~~~~~~~~ Right Barret Hand ~~~~~~~~~~ -->
@@ -729,104 +723,137 @@
 <!--	</joint>-->
 	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-	<!-- Left Sake Gripper -->
-	<link name="LeftSakePalmLink">
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<joint name="LeftGrippertAttachmentFixedJoint" type="fixed">
+		<origin rpy="0 0 0" xyz="0 0 -0.0210000"/>
+		<parent link="LeftGripperYawLink"/>
+		<child link="LeftBarrettPalmLink"/>
+	</joint>
+
+	<!-- Left Barrett Gripper -->
+	<link name="LeftBarrettPalmLink">
 		<inertial>
-			<mass value="0.3"/>
-			<origin rpy="0 0 0" xyz="0.01 0.0 -0.06"/>
-			<inertia ixx="5e-4" ixy="0.0" ixz="0.0" iyy="3e-4" iyz="0.0" izz="3e-4" />
+			<mass value="0.944"/>
+			<origin xyz="0.0 -0.00482 -0.04594" rpy="0.0 0.0 0.0"/>
+			<inertia ixx="0.00150" ixy="-2.1617e-6" ixz="-4.765e-7" iyy="0.001223" iyz="2.018e-6" izz="0.00117"/>
 		</inertial>
-		<visual name="LeftSakePalmLinkVisual">
-			<origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
-			<geometry>
-				<mesh filename="package://sake_description/meshes/SakePalmLink.obj"/>
-			</geometry>
-		</visual>
 	</link>
-	
-	<joint name="LeftSakeBaseFingerJoint1" type="fixed">
-        <origin xyz="0.0 0.0299 -0.0754" rpy="-0.25 0.0 0.0"/>
-        <axis xyz="1.0 0.0 0.0"/>
-        <parent link="LeftSakePalmLink"/>
-        <child link="LeftSakeBaseFingerLink1"/>
-        <dynamics damping="0.05" friction="0.0"/>
-        <limit effort="1.0" lower="-0.06" upper="1.9" velocity="3.67"/>
-    </joint>
-    <joint name="LeftSakeKnuckle1" type="fixed">
-        <origin xyz="0.0 0.0 -0.052" rpy="0.0 0.0 0.0"/>
-        <axis xyz="1.0 0.0 0.0"/>
-        <parent link="LeftSakeBaseFingerLink1"/>
-        <child link="LeftSakeFingerTip1"/>
-        <dynamics damping="0.05" friction="0.0"/>
-        <limit effort="1.0" lower="-1.0" upper="0.0" velocity="3.67"/>
-    </joint>
-    <joint name="LeftSakeBaseFingerJoint2" type="fixed">
-        <origin xyz="0.0 -0.0299 -0.0754" rpy="0.25 0.0 0.0"/>
-        <axis xyz="-1.0 0.0 0.0"/>
-        <parent link="LeftSakePalmLink"/>
-        <child link="LeftSakeBaseFingerLink2"/>
-        <dynamics damping="0.05" friction="0.0"/>
-        <limit effort="1.0" lower="-0.06" upper="1.9" velocity="3.67"/>
-    </joint>
-    <joint name="LeftSakeKnuckle2" type="fixed">
-        <origin xyz="0.0 0.0 -0.052" rpy="0.0 0.0 0.0"/>
-        <axis xyz="-1.0 0.0 0.0"/>
-        <parent link="LeftSakeBaseFingerLink2"/>
-        <child link="LeftSakeFingerTip2"/>
-        <dynamics damping="0.05" friction="0.0"/>
-        <limit effort="1.0" lower="-1.0" upper="0.0" velocity="3.67"/>
-    </joint>
-	
-	<link name="LeftSakeBaseFingerLink1">
-        <inertial>
-            <mass value="0.05"/>
-            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
-        </inertial>
-        <visual name="LeftSakeBaseFingerLink1Visual">
-            <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 3.142"/>
-            <geometry>
-                <mesh filename="package://sake_description/meshes/sake_finger_knuckle.obj"/>
-            </geometry>
-        </visual>
-    </link>
-    <link name="LeftSakeFingerTip1">
-        <inertial>
-            <mass value="0.05"/>
-            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
-        </inertial>
-        <visual name="LeftSakeFingerTip1Visual">
-            <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 3.142"/>
-            <geometry>
-                <mesh filename="package://sake_description/meshes/sake_finger_tip.obj"/>
-            </geometry>
-        </visual>
-    </link>
-    <link name="LeftSakeBaseFingerLink2">
-        <inertial>
-            <mass value="0.05"/>
-            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
-        </inertial>
-        <visual name="LeftSakeBaseFingerLink2Visual">
-            <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 0.0"/>
-            <geometry>
-                <mesh filename="package://sake_description/meshes/sake_finger_knuckle.obj"/>
-            </geometry>
-        </visual>
-    </link>
-    <link name="LeftSakeFingerTip2">
-        <inertial>
-            <mass value="0.05"/>
-            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
-        </inertial>
-        <visual name="LeftSakeFingerTip2Visual">
-            <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 0.0"/>
-            <geometry>
-                <mesh filename="package://sake_description/meshes/sake_finger_tip.obj"/>
-            </geometry>
-        </visual>
-    </link>
+
+<!--	&lt;!&ndash; Left Hand Dumbbell Fixed Joint &ndash;&gt;-->
+<!--	<joint name="LeftHandDumbbellAttachmentFixedJoint" type="fixed">-->
+<!--		<origin rpy="0 0 0" xyz="0 0 -0.027"/>-->
+<!--		<parent link="LeftBarrettPalmLink"/>-->
+<!--		<child link="LeftHandDumbbellLink"/>-->
+<!--	</joint>-->
+
+<!--	&lt;!&ndash; Left Hand Dumbbell &ndash;&gt;-->
+<!--	<link name="LeftHandDumbbellLink">-->
+<!--		<inertial>-->
+<!--			<mass value="2.676"/>-->
+<!--			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>-->
+<!--			<inertia ixx="0.00747341" ixy="0.0" ixz="0.0" iyy="0.04383892" iyz="0.0" izz="0.04383892"/>-->
+<!--		</inertial>-->
+<!--	</link>-->
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<!--	&lt;!&ndash; Left Sake Gripper &ndash;&gt;-->
+<!--	<link name="LeftSakePalmLink">-->
+<!--		<inertial>-->
+<!--			<mass value="0.3"/>-->
+<!--			<origin rpy="0 0 0" xyz="0.01 0.0 -0.06"/>-->
+<!--			<inertia ixx="5e-4" ixy="0.0" ixz="0.0" iyy="3e-4" iyz="0.0" izz="3e-4" />-->
+<!--		</inertial>-->
+<!--		<visual name="LeftSakePalmLinkVisual">-->
+<!--			<origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>-->
+<!--			<geometry>-->
+<!--				<mesh filename="package://sake_description/meshes/SakePalmLink.obj"/>-->
+<!--			</geometry>-->
+<!--		</visual>-->
+<!--	</link>-->
+<!--	-->
+<!--	<joint name="LeftSakeBaseFingerJoint1" type="fixed">-->
+<!--        <origin xyz="0.0 0.0299 -0.0754" rpy="-0.25 0.0 0.0"/>-->
+<!--        <axis xyz="1.0 0.0 0.0"/>-->
+<!--        <parent link="LeftSakePalmLink"/>-->
+<!--        <child link="LeftSakeBaseFingerLink1"/>-->
+<!--        <dynamics damping="0.05" friction="0.0"/>-->
+<!--        <limit effort="1.0" lower="-0.06" upper="1.9" velocity="3.67"/>-->
+<!--    </joint>-->
+<!--    <joint name="LeftSakeKnuckle1" type="fixed">-->
+<!--        <origin xyz="0.0 0.0 -0.052" rpy="0.0 0.0 0.0"/>-->
+<!--        <axis xyz="1.0 0.0 0.0"/>-->
+<!--        <parent link="LeftSakeBaseFingerLink1"/>-->
+<!--        <child link="LeftSakeFingerTip1"/>-->
+<!--        <dynamics damping="0.05" friction="0.0"/>-->
+<!--        <limit effort="1.0" lower="-1.0" upper="0.0" velocity="3.67"/>-->
+<!--    </joint>-->
+<!--    <joint name="LeftSakeBaseFingerJoint2" type="fixed">-->
+<!--        <origin xyz="0.0 -0.0299 -0.0754" rpy="0.25 0.0 0.0"/>-->
+<!--        <axis xyz="-1.0 0.0 0.0"/>-->
+<!--        <parent link="LeftSakePalmLink"/>-->
+<!--        <child link="LeftSakeBaseFingerLink2"/>-->
+<!--        <dynamics damping="0.05" friction="0.0"/>-->
+<!--        <limit effort="1.0" lower="-0.06" upper="1.9" velocity="3.67"/>-->
+<!--    </joint>-->
+<!--    <joint name="LeftSakeKnuckle2" type="fixed">-->
+<!--        <origin xyz="0.0 0.0 -0.052" rpy="0.0 0.0 0.0"/>-->
+<!--        <axis xyz="-1.0 0.0 0.0"/>-->
+<!--        <parent link="LeftSakeBaseFingerLink2"/>-->
+<!--        <child link="LeftSakeFingerTip2"/>-->
+<!--        <dynamics damping="0.05" friction="0.0"/>-->
+<!--        <limit effort="1.0" lower="-1.0" upper="0.0" velocity="3.67"/>-->
+<!--    </joint>-->
+<!--	-->
+<!--	<link name="LeftSakeBaseFingerLink1">-->
+<!--        <inertial>-->
+<!--            <mass value="0.05"/>-->
+<!--            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>-->
+<!--            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>-->
+<!--        </inertial>-->
+<!--        <visual name="LeftSakeBaseFingerLink1Visual">-->
+<!--            <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 3.142"/>-->
+<!--            <geometry>-->
+<!--                <mesh filename="package://sake_description/meshes/sake_finger_knuckle.obj"/>-->
+<!--            </geometry>-->
+<!--        </visual>-->
+<!--    </link>-->
+<!--    <link name="LeftSakeFingerTip1">-->
+<!--        <inertial>-->
+<!--            <mass value="0.05"/>-->
+<!--            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>-->
+<!--            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>-->
+<!--        </inertial>-->
+<!--        <visual name="LeftSakeFingerTip1Visual">-->
+<!--            <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 3.142"/>-->
+<!--            <geometry>-->
+<!--                <mesh filename="package://sake_description/meshes/sake_finger_tip.obj"/>-->
+<!--            </geometry>-->
+<!--        </visual>-->
+<!--    </link>-->
+<!--    <link name="LeftSakeBaseFingerLink2">-->
+<!--        <inertial>-->
+<!--            <mass value="0.05"/>-->
+<!--            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>-->
+<!--            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>-->
+<!--        </inertial>-->
+<!--        <visual name="LeftSakeBaseFingerLink2Visual">-->
+<!--            <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 0.0"/>-->
+<!--            <geometry>-->
+<!--                <mesh filename="package://sake_description/meshes/sake_finger_knuckle.obj"/>-->
+<!--            </geometry>-->
+<!--        </visual>-->
+<!--    </link>-->
+<!--    <link name="LeftSakeFingerTip2">-->
+<!--        <inertial>-->
+<!--            <mass value="0.05"/>-->
+<!--            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>-->
+<!--            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>-->
+<!--        </inertial>-->
+<!--        <visual name="LeftSakeFingerTip2Visual">-->
+<!--            <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 0.0"/>-->
+<!--            <geometry>-->
+<!--                <mesh filename="package://sake_description/meshes/sake_finger_tip.obj"/>-->
+<!--            </geometry>-->
+<!--        </visual>-->
+<!--    </link>-->
 </robot>
