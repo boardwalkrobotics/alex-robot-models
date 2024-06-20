@@ -471,7 +471,7 @@
 			</geometry>
 		</visual>
 	</link>	
-	<joint name="Left_index_q1" type="revolute">
+	<joint name="Left_index_q1" type="fixed">
 		<parent link="Left_thumb_base"/>
 		<child link="Left_index_L1"/>
 		<origin xyz = "-9.49e-3 -13.04e-3 -62.95e-3" rpy = "-1.982050 1.284473 -2.090591" />
@@ -479,7 +479,7 @@
 		<limit lower = "0" upper = "2.0943951" effort = "6.0" velocity = "8.0677777442"/>		<!-- angles in rad, efforts in N-m, velocity in rad/s -->
 		<dynamics damping = "0.001" friction = "0.001" />	<!-- Friction coefficient is not from quantitative measurement -->
 	</joint>
-	<joint name="Left_index_q2" type="revolute">
+	<joint name="Left_index_q2" type="fixed">
 		<parent link="Left_index_L1"/>
 		<child link="Left_index_L2"/>
 		<origin xyz = "38.472723e-3 3.257695e-3 0.000000e-3" rpy = "0 0 0.084474"/>
@@ -525,7 +525,7 @@
 			</geometry>
 		</visual>
 	</link>
-	<joint name="Left_middle_q1" type="revolute">
+	<joint name="Left_middle_q1" type="fixed">
 		<parent link="Left_thumb_base"/>
 		<child link="Left_middle_L1"/>
 		<origin xyz = "9.653191e-3 -15.310271e-3 -67.853949e-3" rpy = "-1.860531 1.308458 -1.896217" />
@@ -533,7 +533,7 @@
 		<dynamics damping = "0.001" friction = "0.001" />	<!-- Friction coefficient is not from quantitative measurement -->
 		<axis xyz="0 0 1"/>
 	</joint>
-	<joint name="Left_middle_q2" type="revolute">
+	<joint name="Left_middle_q2" type="fixed">
 		<parent link="Left_middle_L1"/>
 		<child link="Left_middle_L2"/>
 		<origin xyz = "38.472723e-3 3.257695e-3 0.000000" rpy = "0 0 0.084474"/>
@@ -580,7 +580,7 @@
 			</geometry>
 		</visual>		
 	</link>
-	<joint name="Left_ring_q1" type="revolute">
+	<joint name="Left_ring_q1" type="fixed">
 		<parent link="Left_thumb_base"/>
 		<child link="Left_ring_L1"/>
 		<origin xyz = "29.954260e-3 -14.212492e-3 -67.286105e-3" rpy = "-1.716598 1.321452 -1.675862" />
@@ -588,7 +588,7 @@
 		<dynamics damping = "0.001" friction = "0.001" />	<!-- Friction coefficient is not from quantitative measurement -->
 		<axis xyz="0 0 1"/>
 	</joint>
-	<joint name="Left_ring_q2" type="revolute">
+	<joint name="Left_ring_q2" type="fixed">
 		<parent link="Left_ring_L1"/>
 		<child link="Left_ring_L2"/>
 		<origin xyz = "38.472723e-3 3.257695e-3 0.000000" rpy = "0 0 0.084474"/>
@@ -633,7 +633,7 @@
 			</geometry>
 		</visual>		
 	</link>
-	<joint name="Left_pinky_q1" type="revolute">
+	<joint name="Left_pinky_q1" type="fixed">
 		<parent link="Left_thumb_base"/>
 		<child link="Left_pinky_L1"/>
 		<origin xyz = "49.521293e-3 -11.004583e-3 -63.029065e-3" rpy = "-1.765110 1.322220 -1.658383" />
@@ -641,7 +641,7 @@
 		<dynamics damping = "0.001" friction = "0.001" />	<!-- Friction coefficient is not from quantitative measurement -->
 		<axis xyz="0 0 1"/>
 	</joint>
-	<joint name="Left_pinky_q2" type="revolute">
+	<joint name="Left_pinky_q2" type="fixed">
 		<parent link="Left_pinky_L1"/>
 		<child link="Left_pinky_L2"/>
 		<origin xyz = "38.472723e-3 3.257695e-3 0.000000" rpy = "0 0 0.084474"/>
@@ -689,7 +689,7 @@
 		</visual>
 		
 	</link>
-	<joint name="Left_thumb_q1" type="revolute">
+	<joint name="Left_thumb_q1" type="fixed">
 		<parent link="Left_thumb_base"/>
 		<child link="Left_thumb_L1"/>
 		<origin xyz = "0 0 0" rpy = "0 0 3.330437"/>
@@ -697,7 +697,7 @@
 		<limit lower = "-2.0943951" upper = "0" effort = "1.2" velocity = "40.338888721"/>		<!-- angles in rad, efforts in N-m, velocity in rad/s -->
 		<dynamics damping = "0.001" friction = "0.001" />	<!-- Friction coefficient is not from quantitative measurement -->
 	</joint>
-	<joint name="Left_thumb_q2" type="revolute">
+	<joint name="Left_thumb_q2" type="fixed">
 		<parent link="Left_thumb_L1"/>
 		<child link="Left_thumb_L2"/>
 		<origin xyz = "27.8283501e-3 0 -14.7507000e-3" rpy = "4.450589592585541 0 0" />
@@ -775,7 +775,7 @@
 			</geometry>
 		</visual>
 	</link>
-	<joint name="Right_index_q1" type="revolute">
+	<joint name="Right_index_q1" type="fixed">
 		<parent link="Right_thumb_base"/>
 		<child link="Right_index_L1"/>
 		<origin xyz = " 9.49e-3 -13.04e-3 -62.95e-3 " rpy = " -1.1595426535897932 1.284473 -1.0510016535897932 " />
@@ -783,7 +783,7 @@
 		<limit lower = "0" upper = "2.0943951" effort = "6.0" velocity = "8.0677777442"/>		<!-- angles in rad, efforts in N-m, velocity in rad/s -->
 		<dynamics damping = "0.001" friction = "0.001" />	<!-- Friction coefficient is not from quantitative measurement -->
 	</joint>
-	<joint name="Right_index_q2" type="revolute">
+	<joint name="Right_index_q2" type="fixed">
 		<parent link="Right_index_L1"/>
 		<child link="Right_index_L2"/>
 		<origin xyz = "38.472723e-3 3.257695e-3 0.000000e-3" rpy = "0 0 0.084474"/>
@@ -828,7 +828,7 @@
 			</geometry>
 		</visual>
 	</link>
-	<joint name="Right_middle_q1" type="revolute">
+	<joint name="Right_middle_q1" type="fixed">
 		<parent link="Right_thumb_base"/>
 		<child link="Right_middle_L1"/>
 		<origin xyz = " -9.653191e-3 -15.310271e-3 -67.853949e-3 " rpy = " -1.2810616535897934 1.308458 -1.2453756535897933 " />
@@ -836,7 +836,7 @@
 		<dynamics damping = "0.001" friction = "0.001" />	<!-- Friction coefficient is not from quantitative measurement -->
 		<axis xyz="0 0 1"/>
 	</joint>
-	<joint name="Right_middle_q2" type="revolute">
+	<joint name="Right_middle_q2" type="fixed">
 		<parent link="Right_middle_L1"/>
 		<child link="Right_middle_L2"/>
 		<origin xyz = "38.472723e-3 3.257695e-3 0.000000" rpy = "0 0 0.084474"/>
@@ -879,7 +879,7 @@
 			</geometry>
 		</visual>		
 	</link>
-	<joint name="Right_ring_q1" type="revolute">
+	<joint name="Right_ring_q1" type="fixed">
 		<parent link="Right_thumb_base"/>
 		<child link="Right_ring_L1"/>
 		<origin xyz = " -29.95426e-3 -14.212492e-3 -67.286105e-3 " rpy = " -1.424994653589793 1.321452 -1.4657306535897934 " />
@@ -887,7 +887,7 @@
 		<dynamics damping = "0.001" friction = "0.001" />	<!-- Friction coefficient is not from quantitative measurement -->
 		<axis xyz="0 0 1"/>
 	</joint>
-	<joint name="Right_ring_q2" type="revolute">
+	<joint name="Right_ring_q2" type="fixed">
 		<parent link="Right_ring_L1"/>
 		<child link="Right_ring_L2"/>
 		<origin xyz = "38.472723e-3 3.257695e-3 0.000000" rpy = "0 0 0.084474"/>
@@ -932,7 +932,7 @@
 		</visual>
 		
 	</link>
-	<joint name="Right_pinky_q1" type="revolute">
+	<joint name="Right_pinky_q1" type="fixed">
 		<parent link="Right_thumb_base"/>
 		<child link="Right_pinky_L1"/>
 		<origin xyz = " -49.521293e-3 -11.004583e-3 -63.029065e-3 " rpy = " -1.3764826535897934 1.32222 -1.4832096535897932 " />
@@ -940,7 +940,7 @@
 		<dynamics damping = "0.001" friction = "0.001" />	<!-- Friction coefficient is not from quantitative measurement -->
 		<axis xyz="0 0 1"/>
 	</joint>
-	<joint name="Right_pinky_q2" type="revolute">
+	<joint name="Right_pinky_q2" type="fixed">
 		<parent link="Right_pinky_L1"/>
 		<child link="Right_pinky_L2"/>
 		<origin xyz = "38.472723e-3 3.257695e-3 0.000000" rpy = "0 0 0.084474"/>
@@ -986,7 +986,7 @@
 		</visual>
 		
 	</link>
-	<joint name="Right_thumb_q1" type="revolute">
+	<joint name="Right_thumb_q1" type="fixed">
 		<parent link="Right_thumb_base"/>
 		<child link="Right_thumb_L1"/>
 		<origin xyz = " 0.0 0.0 0.0 " rpy = " 3.141592653589793 -0.0 -0.18884434641020664 " />
@@ -994,7 +994,7 @@
 		<limit lower = "-2.0943951" upper = "0" effort = "1.2" velocity = "40.338888721"/>		<!-- angles in rad, efforts in N-m, velocity in rad/s -->
 		<dynamics damping = "0.001" friction = "0.001" />	<!-- Friction coefficient is not from quantitative measurement -->
 	</joint>
-	<joint name="Right_thumb_q2" type="revolute">
+	<joint name="Right_thumb_q2" type="fixed">
 		<parent link="Right_thumb_L1"/>
 		<child link="Right_thumb_L2"/>
 		<origin xyz = " 27.8283501e-3 1.7436510745838653e-19 14.7507e-3 " rpy = " 1.832595714594045 -0.0 5.366520605522463e-18 " />
