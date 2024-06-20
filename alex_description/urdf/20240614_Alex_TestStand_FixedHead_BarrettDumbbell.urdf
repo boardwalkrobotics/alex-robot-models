@@ -406,10 +406,19 @@
 	<link name="RightBarrettPalmLink">
         <inertial>
             <mass value="0.944"/>
-            <origin xyz="0.0 -0.00482 -0.04594" rpy="0.0 0.0 0.0"/>
+            <origin xyz="0.0 -0.00482 -0.04594" rpy="1.57079632679 0.0 -1.57079632679"/>
             <inertia ixx="0.00150" ixy="-2.1617e-6" ixz="-4.765e-7" iyy="0.001223" iyz="2.018e-6" izz="0.00117"/>
-        </inertial>
-    </link>
+		</inertial>
+<!--		<visual>-->
+<!--			<origin xyz="0 0 0" rpy="1.57079632679  0 -1.57079632679"/>-->
+<!--			<geometry>-->
+<!--				<mesh filename="package://barrett_description/meshes/bh280/hand_base.dae"/>-->
+<!--			</geometry>-->
+<!--			<material name="">-->
+<!--				<color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1"/>-->
+<!--			</material>-->
+<!--		</visual>-->
+	</link>
 
 <!--	&lt;!&ndash; Right Hand Dumbbell Fixed Joint &ndash;&gt;-->
 <!--	<joint name="RightHandDumbbellAttachmentFixedJoint" type="fixed">-->
@@ -421,9 +430,9 @@
 <!--	&lt;!&ndash; Right Hand Dumbbell &ndash;&gt;-->
 <!--	<link name="RightHandDumbbellLink">-->
 <!--		<inertial>-->
-<!--			<mass value="2.676"/>-->
+<!--			<mass value="3.956"/>-->
 <!--			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>-->
-<!--			<inertia ixx="0.00747341" ixy="0.0" ixz="0.0" iyy="0.04383892" iyz="0.0" izz="0.04383892"/>-->
+<!--			<inertia ixx="0.007394" ixy="0.0" ixz="0.0" iyy="0.033713" iyz="0.0" izz="0.033713"/>-->
 <!--		</inertial>-->
 <!--	</link>-->
 	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -734,26 +743,35 @@
 	<link name="LeftBarrettPalmLink">
 		<inertial>
 			<mass value="0.944"/>
-			<origin xyz="0.0 -0.00482 -0.04594" rpy="0.0 0.0 0.0"/>
+			<origin xyz="0.0 -0.00482 -0.04594" rpy="1.57079632679 0.0 -1.57079632679"/>
 			<inertia ixx="0.00150" ixy="-2.1617e-6" ixz="-4.765e-7" iyy="0.001223" iyz="2.018e-6" izz="0.00117"/>
 		</inertial>
+<!--		<visual>-->
+<!--			<origin xyz="0 0 0" rpy="1.57079632679  0 -1.57079632679"/>-->
+<!--			<geometry>-->
+<!--				<mesh filename="package://barrett_description/meshes/bh280/hand_base.dae"/>-->
+<!--			</geometry>-->
+<!--			<material name="">-->
+<!--				<color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1"/>-->
+<!--			</material>-->
+<!--		</visual>-->
 	</link>
 
-<!--	&lt;!&ndash; Left Hand Dumbbell Fixed Joint &ndash;&gt;-->
-<!--	<joint name="LeftHandDumbbellAttachmentFixedJoint" type="fixed">-->
-<!--		<origin rpy="0 0 0" xyz="0 0 -0.027"/>-->
-<!--		<parent link="LeftBarrettPalmLink"/>-->
-<!--		<child link="LeftHandDumbbellLink"/>-->
-<!--	</joint>-->
+	<!-- Left Hand Dumbbell Fixed Joint -->
+	<joint name="LeftHandDumbbellAttachmentFixedJoint" type="fixed">
+		<origin rpy="0 0 0" xyz="0 0 -0.027"/>
+		<parent link="LeftBarrettPalmLink"/>
+		<child link="LeftHandDumbbellLink"/>
+	</joint>
 
-<!--	&lt;!&ndash; Left Hand Dumbbell &ndash;&gt;-->
-<!--	<link name="LeftHandDumbbellLink">-->
-<!--		<inertial>-->
-<!--			<mass value="2.676"/>-->
-<!--			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>-->
-<!--			<inertia ixx="0.00747341" ixy="0.0" ixz="0.0" iyy="0.04383892" iyz="0.0" izz="0.04383892"/>-->
-<!--		</inertial>-->
-<!--	</link>-->
+	<!-- Left Hand Dumbbell -->
+	<link name="LeftHandDumbbellLink">
+		<inertial>
+			<mass value="3.956"/>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<inertia ixx="0.007394" ixy="0.0" ixz="0.0" iyy="0.033713" iyz="0.0" izz="0.033713"/>
+		</inertial>
+	</link>
 	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 <!--	&lt;!&ndash; Left Sake Gripper &ndash;&gt;-->
