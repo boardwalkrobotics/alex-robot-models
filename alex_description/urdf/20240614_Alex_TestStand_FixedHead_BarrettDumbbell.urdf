@@ -409,15 +409,15 @@
             <origin xyz="0.0 -0.00482 -0.04594" rpy="1.57079632679 0.0 -1.57079632679"/>
             <inertia ixx="0.00150" ixy="-2.1617e-6" ixz="-4.765e-7" iyy="0.001223" iyz="2.018e-6" izz="0.00117"/>
 		</inertial>
-<!--		<visual>-->
-<!--			<origin xyz="0 0 0" rpy="1.57079632679  0 -1.57079632679"/>-->
-<!--			<geometry>-->
-<!--				<mesh filename="package://barrett_description/meshes/bh280/hand_base.dae"/>-->
-<!--			</geometry>-->
-<!--			<material name="">-->
-<!--				<color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1"/>-->
-<!--			</material>-->
-<!--		</visual>-->
+		<visual>
+			<origin xyz="0 0 0" rpy="1.57079632679  0 -1.57079632679"/>
+			<geometry>
+				<mesh filename="package://barrett_description/meshes/bh280/hand_base.dae"/>
+			</geometry>
+			<material name="">
+				<color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1"/>
+			</material>
+		</visual>
 	</link>
 
 <!--	&lt;!&ndash; Right Hand Dumbbell Fixed Joint &ndash;&gt;-->
@@ -434,9 +434,9 @@
 <!--			&lt;!&ndash;			<mass value="8.49188"/>&ndash;&gt;-->
 <!--			&lt;!&ndash;			<mass value="10.75984"/>&ndash;&gt;-->
 <!--			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>-->
-<!--			<inertia ixx="0.00739373" ixy="0.0" ixz="0.0" iyy="0.03371325" iyz="0.0" izz="0.03371325"/>-->
-<!--			&lt;!&ndash;			<inertia ixx="0.02190854" ixy="0.0" ixz="0.0" iyy="0.07315278" iyz="0.0" izz="0.07315278"/>&ndash;&gt;-->
-<!--			&lt;!&ndash;			<inertia ixx="0.02916602" ixy="0.0" ixz="0.0" iyy="0.10145919" iyz="0.0" izz="0.10145919"/>&ndash;&gt;-->
+<!--			<inertia ixx="0.03371325" ixy="0.0" ixz="0.0" iyy="0.00739373" iyz="0.0" izz="0.03371325"/>-->
+<!--&lt;!&ndash;			<inertia ixx="0.07315278" ixy="0.0" ixz="0.0" iyy="0.02190854" iyz="0.0" izz="0.07315278"/>&ndash;&gt;-->
+<!--&lt;!&ndash;			<inertia ixx="0.10145919" ixy="0.0" ixz="0.0" iyy="0.02916602" iyz="0.0" izz="0.10145919"/>&ndash;&gt;-->
 <!--		</inertial>-->
 <!--	</link>-->
 	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -750,15 +750,15 @@
 			<origin xyz="0.0 -0.00482 -0.04594" rpy="1.57079632679 0.0 -1.57079632679"/>
 			<inertia ixx="0.00150" ixy="-2.1617e-6" ixz="-4.765e-7" iyy="0.001223" iyz="2.018e-6" izz="0.00117"/>
 		</inertial>
-<!--		<visual>-->
-<!--			<origin xyz="0 0 0" rpy="1.57079632679  0 -1.57079632679"/>-->
-<!--			<geometry>-->
-<!--				<mesh filename="package://barrett_description/meshes/bh280/hand_base.dae"/>-->
-<!--			</geometry>-->
-<!--			<material name="">-->
-<!--				<color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1"/>-->
-<!--			</material>-->
-<!--		</visual>-->
+		<visual>
+			<origin xyz="0 0 0" rpy="1.57079632679  0 -1.57079632679"/>
+			<geometry>
+				<mesh filename="package://barrett_description/meshes/bh280/hand_base.dae"/>
+			</geometry>
+			<material name="">
+				<color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1"/>
+			</material>
+		</visual>
 	</link>
 
 <!--	&lt;!&ndash; Left Hand Dumbbell Fixed Joint &ndash;&gt;-->
@@ -775,9 +775,9 @@
 <!--&lt;!&ndash;			<mass value="8.49188"/>&ndash;&gt;-->
 <!--&lt;!&ndash;			<mass value="10.75984"/>&ndash;&gt;-->
 <!--			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>-->
-<!--			<inertia ixx="0.00739373" ixy="0.0" ixz="0.0" iyy="0.03371325" iyz="0.0" izz="0.03371325"/>-->
-<!--&lt;!&ndash;			<inertia ixx="0.02190854" ixy="0.0" ixz="0.0" iyy="0.07315278" iyz="0.0" izz="0.07315278"/>&ndash;&gt;-->
-<!--&lt;!&ndash;			<inertia ixx="0.02916602" ixy="0.0" ixz="0.0" iyy="0.10145919" iyz="0.0" izz="0.10145919"/>&ndash;&gt;-->
+<!--			<inertia ixx="0.03371325" ixy="0.0" ixz="0.0" iyy="0.00739373" iyz="0.0" izz="0.03371325"/>-->
+<!--&lt;!&ndash;			<inertia ixx="0.07315278" ixy="0.0" ixz="0.0" iyy="0.02190854" iyz="0.0" izz="0.07315278"/>&ndash;&gt;-->
+<!--&lt;!&ndash;			<inertia ixx="0.10145919" ixy="0.0" ixz="0.0" iyy="0.02916602" iyz="0.0" izz="0.10145919"/>&ndash;&gt;-->
 <!--		</inertial>-->
 <!--	</link>-->
 	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
