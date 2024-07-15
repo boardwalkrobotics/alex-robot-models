@@ -1,0 +1,700 @@
+<?xml version = "1.0" ?>
+<robot name="Alex">
+
+	<!-- 8020 Base, Chest and Head -->
+	<link name="Pelvis">
+		<inertial>
+			<mass value="10.0"/>
+			<origin rpy="0 0 0" xyz="0.02 0.0 -0.02"/>
+			<inertia ixx="0.0942" ixy="6.05E-06" ixz="0.000379" iyy="0.0416" iyz="3.37E-07" izz="0.112" />
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="package://alex_description/meshes/Torso_Base_and_Head.obj"/>
+			</geometry>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.37"/>
+		</visual>
+	</link>
+
+	<!-- TORSO IMU's NOTE: We currently have 3 fixed IMU's because we have fixed spine. This will change after we get a working spine-->
+	<!-- TorsoLeftIMU-->
+	<link name="TorsoLeftIMULink">
+		<inertial>
+			<mass value="0"/>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+		</inertial>
+	</link>
+	<joint name="TorsoLeftIMUJoint" type="fixed">
+		<origin rpy="1.570796 0 -1.570796" xyz="-0.102655 0.034047 0.488646"/>
+		<axis xyz="0 0 1"/>
+		<parent link="Pelvis"/>
+		<child link="TorsoLeftIMULink"/>
+	</joint>
+	<gazebo reference="TorsoLeftIMULink">
+		<sensor name="TorsoLeftIMU" type="imu">
+			<always_on>true</always_on>
+			<imu>
+				<noise>
+					<type>gaussian</type>
+					<rate>
+						<mean>0</mean>
+						<stddev>0.0002</stddev>
+						<bias_mean>7.5e-06</bias_mean>
+						<bias_stddev>8e-07</bias_stddev>
+					</rate>
+					<accel>
+						<mean>0</mean>
+						<stddev>0.017</stddev>
+						<bias_mean>0.1</bias_mean>
+						<bias_stddev>0.001</bias_stddev>
+					</accel>
+				</noise>
+			</imu>
+		</sensor>
+	</gazebo>
+	<!-- TorsoRightIMU-->
+	<link name="TorsoRightIMULink">
+		<inertial>
+			<mass value="0"/>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+		</inertial>
+	</link>
+	<joint name="TorsoRightIMUJoint" type="fixed">
+		<origin rpy="1.570796 0 -1.570796" xyz="-0.105655 -0.059053 0.488646"/>
+		<axis xyz="0 0 1"/>
+		<parent link="Pelvis"/>
+		<child link="TorsoRightIMULink"/>
+	</joint>
+	<gazebo reference="TorsoRightIMULink">
+		<sensor name="TorsoRightIMU" type="imu">
+			<always_on>true</always_on>
+			<imu>
+				<noise>
+					<type>gaussian</type>
+					<rate>
+						<mean>0</mean>
+						<stddev>0.0002</stddev>
+						<bias_mean>7.5e-06</bias_mean>
+						<bias_stddev>8e-07</bias_stddev>
+					</rate>
+					<accel>
+						<mean>0</mean>
+						<stddev>0.017</stddev>
+						<bias_mean>0.1</bias_mean>
+						<bias_stddev>0.001</bias_stddev>
+					</accel>
+				</noise>
+			</imu>
+		</sensor>
+	</gazebo>
+
+	<!-- LEFT ARM -->
+	<!-- left upper arm joints -->
+	<joint name="LeftShoulderPitch" type="revolute">
+		<origin xyz="-0.0114 0.1 0.570" rpy="0.698132 0.0 0.0"   />
+		<axis xyz="0.0 1.0 0.0" />
+		<parent link="Pelvis" />
+		<child link="LeftShoulderPitchLink" />
+		<limit effort="150.0" lower="-3.141592" upper="1.22173" velocity = "9.0" />
+		<dynamics damping="0.05" friction="0.0"/>
+	</joint>
+
+	<joint name="LeftShoulderRoll" type="revolute">
+		<origin rpy="-0.698132 0.0 0.0" xyz="0.0 0.15676000 -0.01300000" />
+		<axis xyz="1 0 0" />
+		<parent link="LeftShoulderPitchLink" />
+		<child link="LeftShoulderRollLink" />
+		<limit effort="150.0" lower="-0.349066" upper="2.79253" velocity = "9.0" />
+		<dynamics damping="0.05" friction="0.0"/>
+	</joint>
+
+	<joint name="LeftShoulderYaw" type="revolute">
+		<origin rpy="0.0 0.0 0.0" xyz="0.0 0.035 0.0" />
+		<axis xyz="0.0 0.0 1.0" />
+		<parent link="LeftShoulderRollLink" />
+		<child link="LeftShoulderYawLink" />
+		<limit effort="80.0" lower="-1.91986" upper="1.22173" velocity = "11.5" />
+		<dynamics damping="0.05" friction="0.0"/>
+	</joint>
+
+	<joint name="LeftElbowPitch" type="revolute">
+		<origin rpy="0.0 0.0 0.0" xyz="0.015 0.0 -0.3127" />
+		<axis xyz="0.0 1.0 0.0" />
+		<parent link="LeftShoulderYawLink" />
+		<child link="LeftElbowPitchLink" />
+		<limit effort="80.0" lower="-2.35619" upper="0.174532925" velocity = "11.5" />
+		<dynamics damping="0.05" friction="0.0"/>
+	</joint>
+
+	<!-- left wrist joints -->
+	<joint name="LeftWristYaw" type="revolute">
+		<origin xyz="-0.015 0.0 0.0" rpy="0.0 0.0 0.0"   />
+		<axis xyz="0.0 0.0 1.0" />
+		<parent link="LeftElbowPitchLink" />
+		<child link="LeftWristYawLink" />
+		<limit effort="20.0" lower="-2.61799" upper="2.61799" velocity = "25.0" />
+		<dynamics damping="0.05" friction="0.0"/>
+	</joint>
+
+	<joint name="LeftWristRoll" type="revolute">
+		<origin xyz="0.0 -0.013 -0.25" rpy="0.0 0.0 0.0"/>
+		<axis xyz="1 0 0" />
+		<parent link="LeftWristYawLink" />
+		<child link="LeftWristRollLink" />
+		<limit effort="20.0" lower="-1.8326" upper="0.610865" velocity = "25.0" />
+		<dynamics damping="0.05" friction="0.0"/>
+	</joint>
+
+	<joint name="LeftGripperYaw" type="revolute">
+		<origin xyz="0.0 0.013 -0.031" rpy="0.0 0.0 0.0" />
+		<axis xyz="0.0 0.0 1.0" />
+		<parent link="LeftWristRollLink" />
+		<child link="LeftGripperYawLink" />
+		<limit effort="20.0" lower="-2.61799" upper="2.61799" velocity = "25.0" />
+		<dynamics damping="0.05" friction="0.0"/>
+	</joint>
+
+	<!-- left upper arm links -->
+	<link name="LeftShoulderPitchLink">
+		<inertial>
+			<mass value="2.917"/>
+			<origin 
+					rpy="0 0 0" 
+					xyz="-0.00117 0.1400097 -0.00621"/>
+			<inertia 
+					ixx="0.0108367" 
+					ixy="1.356e-4" 
+					ixz="-2.666e-5" 
+					iyy="0.00498324" 
+					iyz="0.00090758" 
+					izz="0.01142661" />
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="package://alex_description/meshes/cycloidal_arm/LeftShoulderPitchLink.obj"/>
+			</geometry>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+		</visual>
+	</link>
+
+	<link name="LeftShoulderRollLink">
+		<inertial>
+			<mass value="0.971"/>
+			<origin 
+					rpy="0 0 0" 
+					xyz="0.01251711 0.0188309 -0.03849849"/>
+			<inertia 
+					ixx="0.002948452" 
+					ixy="1.38648e-4" 
+					ixz="-3.34518e-4" 
+					iyy="0.002358705" 
+					iyz="5.25478e-4" 
+					izz="0.00143661" />
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="package://alex_description/meshes/cycloidal_arm/LeftShoulderRollLink_shortBicep.obj"/>
+			</geometry>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+		</visual>
+	</link>
+
+	<link name="LeftShoulderYawLink">
+		<inertial>
+			<mass value="2.53059"/>
+			<origin 
+					rpy="0 0 0" 
+					xyz="0.00479 0.00062 -0.3624141"/>
+			<inertia 
+					ixx="0.02277422"
+					ixy="5.053e-5" 
+					ixz="0.0012266" 
+					iyy="0.0225956" 
+					iyz="-2.571e-4" 
+					izz="0.00260312" />
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="package://alex_description/meshes/cycloidal_arm/LeftShoulderYawLink.obj"/>
+			</geometry>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0867"/>
+		</visual>
+	</link>
+
+	<!-- left wrist links -->
+	<link name="LeftElbowPitchLink">
+		<inertial>
+			<mass value="0.4895385722366345"/>
+			<origin 
+					xyz="-0.012039456382923622 -0.003781574950319319 -0.04998167188554722" 
+					rpy="0 0 0"/>
+			<inertia
+					ixx="7.466682164602668E-4"
+					ixy="-4.9125185240164585E-6"
+					ixz="-3.118756072793259E-5"
+					iyy="6.697708130628391E-4"
+					iyz="1.4985943611036623E-4"
+					izz="4.976405971436793E-4" />
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="package://alex_description/meshes/cycloidal_arm/LeftElbowPitchLink.obj"/>
+			</geometry>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+		</visual>
+	</link>
+
+	<link name="LeftWristYawLink">
+		<inertial>
+			<mass value="1.438"/> <!-- This is a measured value. Refer to https://docs.google.com/spreadsheets/d/1VXWFJk3VJUsfkHrDaytB2INq94un1KytIOzcKJD0p44/edit?gid=0#gid=0  -->
+			<origin 
+					xyz="-0.0024383302867828187 -5.246795816220965E-4 -0.1300914213150444" 
+					rpy="0 0 0"/>
+			<inertia 
+					ixx="0.0036746953546519796" 
+					ixy="1.5200537475756135E-5" 
+					ixz="-1.3155829305043117E-5" 
+					iyy="0.003955455275643572" 
+					iyz="-9.878441058198549E-5" 
+					izz="0.0014329681446651732" />
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="package://alex_description/meshes/cycloidal_arm/LeftWristYawLink.obj"/>
+			</geometry>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+		</visual>
+	</link>
+
+
+	<link name="LeftWristRollLink">
+		<inertial>
+			<mass value="0.874"/> <!-- This is a measured value. Refer to https://docs.google.com/spreadsheets/d/1VXWFJk3VJUsfkHrDaytB2INq94un1KytIOzcKJD0p44/edit?gid=0#gid=0  -->
+			<origin 
+					xyz="1.5946763939368963E-4 0.012435479395687345 0.0016553711070014143"
+					rpy="0 0 0"/>
+			<inertia
+					ixx="5.09001424971436E-4"
+					ixy="-7.082123470616537E-6"
+					ixz="-6.451042619821356E-6"
+					iyy="5.251489793788867E-4"
+					iyz="-1.2507083234598893E-6"
+					izz="5.190882683529875E-4" />
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="package://alex_description/meshes/cycloidal_arm/LeftWristRollLink.obj"/>
+			</geometry>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+		</visual>
+	</link>
+
+
+	<link name="LeftGripperYawLink">
+		<inertial>
+			<mass value="0.2480"/>
+			<origin 
+					rpy="0 0 0" 
+					xyz="-0.00014709 -0.00037325 0.01033255"/>
+			<inertia
+					ixx="0.00013926"
+					ixy="3.991e-8"
+					ixz="4.497e-7"
+					iyy="0.00014236"
+					iyz="-7.218e-7"
+					izz="0.00011005" />
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="package://alex_description/meshes/cycloidal_arm/LeftGripperYawLink.obj"/>
+			</geometry>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+		</visual>
+	</link>
+
+	<!-- LEFT ARM IMU's -->
+	<!-- Left Shoulder Pitch IMU Information -->
+	<link name="LeftShoulderPitchIMULink">
+		<inertial>
+			<mass value="0"/>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+		</inertial>
+	</link>
+	<joint name="LeftShoulderPitchIMUJoint" type="fixed">
+		<origin rpy="-3.141592 0 -1.57079632679" xyz="0.01432621 0.0755071 -0.00245783"/>
+		<axis xyz="0 0 1"/>
+		<parent link="LeftShoulderPitchLink"/>
+		<child link="LeftShoulderPitchIMULink"/>
+	</joint>
+	<gazebo reference="LeftShoulderPitchIMULink">
+		<sensor name="LeftShoulderPitchIMU" type="imu">
+			<always_on>true</always_on>
+			<imu>
+				<noise>
+					<type>gaussian</type>
+					<rate>
+						<mean>0</mean>
+						<stddev>0.0002</stddev>
+						<bias_mean>7.5e-06</bias_mean>
+						<bias_stddev>8e-07</bias_stddev>
+					</rate>
+					<accel>
+						<mean>0</mean>
+						<stddev>0.017</stddev>
+						<bias_mean>0.1</bias_mean>
+						<bias_stddev>0.001</bias_stddev>
+					</accel>
+				</noise>
+			</imu>
+		</sensor>
+	</gazebo>
+
+	<!-- Left ShoulderYaw IMU Note: in CAD this is the left bicep IMU -->
+	<link name="LeftShoulderYawIMULink">
+		<inertial>
+			<mass value="0"/>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+		</inertial>
+	</link>
+	<joint name="LeftShoulderYawIMUJoint" type="fixed">
+		<origin rpy="1.570796 3.1415926 -0.314159" xyz="-0.00633723 -0.00669505 -0.19881468"/>
+		<axis xyz="0 0 1"/>
+		<parent link="LeftShoulderYawLink"/>
+		<child link="LeftShoulderYawIMULink"/>
+	</joint>
+	<gazebo reference="LeftShoulderYawIMULink">
+		<sensor name="LeftShoulderYawIMU" type="imu">
+			<always_on>true</always_on>
+			<pose>0 0 0 0 0 0</pose>
+			<imu>
+				<noise>
+					<type>gaussian</type>
+					<rate>
+						<mean>0</mean>
+						<stddev>0.0002</stddev>
+						<bias_mean>7.5e-06</bias_mean>
+						<bias_stddev>8e-07</bias_stddev>
+					</rate>
+					<accel>
+						<mean>0</mean>
+						<stddev>0.017</stddev>
+						<bias_mean>0.1</bias_mean>
+						<bias_stddev>0.001</bias_stddev>
+					</accel>
+				</noise>
+			</imu>
+		</sensor>
+	</gazebo>
+
+	<!-- Left Wrist Yaw IMU Note: in CAD this is the left bicep IMU -->
+	<link name="LeftWristYawIMULink">
+		<inertial>
+			<mass value="0"/>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+		</inertial>
+	</link>
+
+	<joint name="LeftWristYawIMUJoint" type="fixed">
+		<origin rpy="1.571  0.0 1.571" xyz="-0.048986 0.011658 -0.149476"/>
+		<axis xyz="0 0 1"/>
+		<parent link="LeftWristYawLink"/>
+		<child link="LeftWristYawIMULink"/>
+	</joint>
+
+	<gazebo reference="LeftWristYawIMULink">
+		<sensor name="LeftWristYawIMU" type="imu">
+			<always_on>true</always_on>
+			<imu> <!-- placeholder tag for IMU --> </imu>
+		</sensor>
+	</gazebo>
+
+	<!-- RIGHT ARM -->
+	<!-- Right Upper Arm Joints -->
+	<joint name="RightShoulderPitch" type="revolute">
+		<origin xyz="-0.0114 -0.1 0.570" rpy="-0.698132 0.0 0.0"   />
+		<axis xyz="0.0 1.0 0.0" />
+		<parent link="Pelvis" />
+		<child link="RightShoulderPitchLink" />
+		<limit effort="1000" lower="-3.141592" upper="1.22173" velocity = "100" />
+		<dynamics damping="0.05" friction="0.0"/>
+	</joint>
+	<joint name="RightShoulderRoll" type="revolute">
+		<origin rpy="0.698132 0.0 0.0" xyz="0.0 -0.15676000 -0.01300000" />
+		<axis xyz="1 0 0" />
+		<parent link="RightShoulderPitchLink" />
+		<child link="RightShoulderRollLink" />
+		<limit effort="1000" lower="-2.79253" upper="0.349066" velocity = "100" />
+		<dynamics damping="0.05" friction="0.0"/>
+	</joint>
+	<joint name="RightShoulderYaw" type="revolute">
+		<origin rpy="0.0 0.0 0.0" xyz="0.0 -0.035 0.0" />
+		<axis xyz="0.0 0.0 1.0" />
+		<parent link="RightShoulderRollLink" />
+		<child link="RightShoulderYawLink" />
+		<limit effort="1000" lower="-1.22173" upper="1.91986" velocity = "100" />
+		<dynamics damping="0.05" friction="0.0"/>
+	</joint>
+	<joint name="RightElbowPitch" type="revolute">
+		<origin rpy="0.0 0.0 0.0" xyz="0.015 0.0 -0.3127" />
+		<axis xyz="0.0 1.0 0.0" />
+		<parent link="RightShoulderYawLink" />
+		<child link="RightElbowPitchLink" />
+		<limit effort="1000" lower="-2.35619" upper="0.174532925" velocity = "100" />
+		<dynamics damping="0.05" friction="0.0"/>
+	</joint>
+
+	<!-- Right wrist joints -->
+	<joint name="RightWristYaw" type="revolute">
+		<origin xyz="-0.015 0.0 0.0" rpy="0.0 0.0 0.0"   />
+		<axis xyz="0.0 0.0 1.0" />
+		<parent link="RightElbowPitchLink" />
+		<child link="RightWristYawLink" />
+		<limit effort="20.0" lower="-2.61799" upper="2.61799" velocity = "25.0" />
+		<dynamics damping="0.05" friction="0.0"/>
+	</joint>
+
+	<joint name="RightWristRoll" type="revolute">
+		<origin xyz="0.0 0.013 -0.25" rpy="0.0 0.0 0.0"/>
+		<axis xyz="1 0 0" />
+		<parent link="RightWristYawLink" />
+		<child link="RightWristRollLink" />
+		<limit effort="20.0" lower="-0.610865" upper="1.8326" velocity = "25.0" />
+		<dynamics damping="0.05" friction="0.0"/>
+	</joint>
+
+	<joint name="RightGripperYaw" type="revolute">
+		<origin xyz="0.0 -0.013 -0.031" rpy="0.0 0.0 0.0" />
+		<axis xyz="0.0 0.0 1.0" />
+		<parent link="RightWristRollLink" />
+		<child link="RightGripperYawLink" />
+		<limit effort="20.0" lower="-2.61799" upper="2.61799" velocity = "25.0" />
+		<dynamics damping="0.05" friction="0.0"/>
+	</joint>
+
+	<!-- Right Upper Arm Links -->
+	<link name="RightShoulderPitchLink">
+		<inertial>
+			<mass value="2.917"/>
+			<origin rpy="0 0 0" xyz="-0.00117 -0.1400097 -0.00621"/>
+			<inertia ixx="0.0108367" ixy="1.356e-4" ixz="-2.666e-5" iyy="0.00498324" iyz="0.00090758" izz="0.01142661" />
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="package://alex_description/meshes/cycloidal_arm/RightShoulderPitchLink.obj"/>
+			</geometry>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+		</visual>
+	</link>
+
+	<link name="RightShoulderRollLink">
+		<inertial>
+			<mass value="0.971"/>
+			<origin rpy="0 0 0" xyz="0.01251711 -0.0188309 -0.03849849"/>
+			<inertia ixx="0.002948452" ixy="-1.38648e-4" ixz="-3.34518e-4" iyy="0.002358705" iyz="-5.25478e-4" izz="0.00143661" />
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="package://alex_description/meshes/cycloidal_arm/RightShoulderRollLink_shortBicep.obj"/>
+			</geometry>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+		</visual>
+	</link>
+
+	<link name="RightShoulderYawLink">
+		<inertial>
+			<mass value="2.53059"/>
+			<origin rpy="0 0 0" xyz="0.00479 0.00062 -0.3624141"/>
+			<inertia ixx="0.02277422" ixy="5.053e-5" ixz="0.0012266" iyy="0.0225956" iyz="-2.571e-4" izz="0.00260312" />
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="package://alex_description/meshes/cycloidal_arm/RightShoulderYawLink.obj"/>
+			</geometry>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0867"/>
+		</visual>
+	</link>
+
+	<!-- right wrist links -->
+	<link name="RightElbowPitchLink">
+		<inertial>
+			<mass value="0.4895385722366345"/>
+			<origin xyz="-0.012039456382923622 0.003781574950319319 -0.04998167188554722" rpy="0 0 0"/>
+			<inertia
+					ixx="7.466682164602668E-4"
+					ixy="-4.9125185240164585E-6"
+					ixz="-3.118756072793259E-5"
+					iyy="6.697708130628391E-4"
+					iyz="1.4985943611036623E-4"
+					izz="4.976405971436793E-4" />
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="package://alex_description/meshes/cycloidal_arm/RightElbowPitchLink.obj"/>
+			</geometry>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+		</visual>
+	</link>
+
+	<link name="RightWristYawLink">
+		<inertial>
+			<mass value="1.438"/> <!-- This is a measured value. Refer to https://docs.google.com/spreadsheets/d/1VXWFJk3VJUsfkHrDaytB2INq94un1KytIOzcKJD0p44/edit?gid=0#gid=0  -->
+			<origin xyz="-0.0024383302867828187 5.246795816220965E-4 -0.1300914213150444" rpy="0 0 0"/> 
+			<inertia
+					ixx="0.0036746953546519796"
+					ixy="1.5200537475756135E-5"
+					ixz="-1.3155829305043117E-5"
+					iyy="0.003955455275643572"
+					iyz="-9.878441058198549E-5"
+					izz="0.0014329681446651732" />
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="package://alex_description/meshes/cycloidal_arm/RightWristYawLink.obj"/>
+			</geometry>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+		</visual>
+	</link>
+
+	<link name="RightWristRollLink">
+		<inertial>
+			<mass value="0.874"/> <!-- This is a measured value. Refer to https://docs.google.com/spreadsheets/d/1VXWFJk3VJUsfkHrDaytB2INq94un1KytIOzcKJD0p44/edit?gid=0#gid=0  -->
+			<origin xyz="1.5946763939368963E-4 -0.012435479395687345 0.0016553711070014143" rpy="0 0 0"/>
+			<inertia
+					ixx="5.09001424971436E-4"
+					ixy="-7.082123470616537E-6"
+					ixz="-6.451042619821356E-6"
+					iyy="5.251489793788867E-4"
+					iyz="-1.2507083234598893E-6"
+					izz="5.190882683529875E-4" />
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="package://alex_description/meshes/cycloidal_arm/RightWristRollLink.obj"/>
+			</geometry>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+		</visual>
+	</link>
+
+	<link name="RightGripperYawLink">
+		<inertial>
+			<mass value="0.2480"/>
+			<origin rpy="0 0 0" xyz="-0.00014709 0.00037325 0.01033255"/>
+			<inertia
+					ixx="0.00013926"
+					ixy="3.991e-8"
+					ixz="4.497e-7"
+					iyy="0.00014236"
+					iyz="-7.218e-7"
+					izz="0.00011005" />
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="package://alex_description/meshes/cycloidal_arm/RightGripperYawLink.obj"/>
+			</geometry>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+		</visual>
+	</link>
+	<!-- Right ARM IMU's -->
+	<!-- Right Shoulder Pitch IMU Information -->
+	<link name="RightShoulderPitchIMULink">
+		<inertial>
+			<mass value="0"/>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+		</inertial>
+	</link>
+	<joint name="RightShoulderPitchIMUJoint" type="fixed">
+		<origin rpy="3.141592 0 -1.57079632679" xyz="0.01432621 -0.10001299 -0.00245783"/>
+		<axis xyz="0 0 1"/>
+		<parent link="RightShoulderPitchLink"/>
+		<child link="RightShoulderPitchIMULink"/>
+	</joint>
+	<gazebo reference="RightShoulderPitchIMULink">
+		<sensor name="RightShoulderPitchIMU" type="imu">
+			<always_on>true</always_on>
+			<imu>
+				<noise>
+					<type>gaussian</type>
+					<rate>
+						<mean>0</mean>
+						<stddev>0.0002</stddev>
+						<bias_mean>7.5e-06</bias_mean>
+						<bias_stddev>8e-07</bias_stddev>
+					</rate>
+					<accel>
+						<mean>0</mean>
+						<stddev>0.017</stddev>
+						<bias_mean>0.1</bias_mean>
+						<bias_stddev>0.001</bias_stddev>
+					</accel>
+				</noise>
+			</imu>
+		</sensor>
+	</gazebo>
+
+	<!-- Right ShoulderYaw IMU Note: in CAD this is the left bicep IMU -->
+	<link name="RightShoulderYawIMULink">
+		<inertial>
+			<mass value="0"/>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+		</inertial>
+	</link>
+	<joint name="RightShoulderYawIMUJoint" type="fixed">
+		<origin rpy="-1.570796 0.0 0.314159" xyz="0.00119168 0.00914134 -0.19881468"/>
+		<axis xyz="0 0 1"/>
+		<parent link="RightShoulderYawLink"/>
+		<child link="RightShoulderYawIMULink"/>
+	</joint>
+	<gazebo reference="RightShoulderYawIMULink">
+		<sensor name="RightShoulderYawIMU" type="imu">
+			<always_on>true</always_on>
+			<pose>0 0 0 0 0 0</pose>
+			<imu>
+				<noise>
+					<type>gaussian</type>
+					<rate>
+						<mean>0</mean>
+						<stddev>0.0002</stddev>
+						<bias_mean>7.5e-06</bias_mean>
+						<bias_stddev>8e-07</bias_stddev>
+					</rate>
+					<accel>
+						<mean>0</mean>
+						<stddev>0.017</stddev>
+						<bias_mean>0.1</bias_mean>
+						<bias_stddev>0.001</bias_stddev>
+					</accel>
+				</noise>
+			</imu>
+		</sensor>
+	</gazebo>
+
+	<!-- Right Wrist Yaw IMU Note: in CAD this is the left bicep IMU -->
+	<link name="RightWristYawIMULink">
+		<inertial>
+			<mass value="0"/>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+		</inertial>
+	</link>
+
+	<joint name="RightWristYawIMUJoint" type="fixed">
+		<origin rpy="1.571  0.0 1.571" xyz="-0.048986 0.011658 -0.149476"/>
+		<axis xyz="0 0 1"/>
+		<parent link="RightWristYawLink"/>
+		<child link="RightWristYawIMULink"/>
+	</joint>
+
+	<gazebo reference="RightWristYawIMULink">
+		<sensor name="RightWristYawIMU" type="imu">
+			<always_on>true</always_on>
+			<imu> <!-- placeholder tag for IMU --> </imu>
+		</sensor>
+	</gazebo>
+</robot>
