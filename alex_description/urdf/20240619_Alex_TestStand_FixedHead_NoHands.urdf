@@ -159,7 +159,7 @@
 	<!-- left upper arm links -->
 	<link name="LeftShoulderPitchLink">
 		<inertial>
-			<mass value="2.917"/>
+			<mass value="3.025"/>
 			<origin
 					rpy="0 0 0"
 					xyz="-0.00256145 0.12130973 -0.0066646"/>
@@ -191,7 +191,7 @@
 
 	<link name="LeftShoulderYawLink">
 		<inertial>
-			<mass value="2.53059"/>
+			<mass value="2.93"/>
 			<origin
 					rpy="0 0 0"
 					xyz="0.00510403 0.00314332 -0.21695413"/>
@@ -225,7 +225,7 @@
 
 	<link name="LeftWristYawLink">
 		<inertial>
-			<mass value="1.438"/> <!-- This is a measured value. Refer to https://docs.google.com/spreadsheets/d/1VXWFJk3VJUsfkHrDaytB2INq94un1KytIOzcKJD0p44/edit?gid=0#gid=0  -->
+			<mass value="1.55"/> <!-- This is a measured value. Refer to https://docs.google.com/spreadsheets/d/1VXWFJk3VJUsfkHrDaytB2INq94un1KytIOzcKJD0p44/edit?gid=0#gid=0  -->
 			<origin
 					rpy="0 0 0"
 					xyz="-0.00263832 -0.00050534 -0.13018376"/>
@@ -243,7 +243,7 @@
 
 	<link name="LeftWristRollLink">
 		<inertial>
-		<mass value="0.874"/> <!-- This is a measured value. Refer to https://docs.google.com/spreadsheets/d/1VXWFJk3VJUsfkHrDaytB2INq94un1KytIOzcKJD0p44/edit?gid=0#gid=0  -->
+		<mass value="0.909"/> <!-- This is a measured value. Refer to https://docs.google.com/spreadsheets/d/1VXWFJk3VJUsfkHrDaytB2INq94un1KytIOzcKJD0p44/edit?gid=0#gid=0  -->
 		<origin
 				rpy="0 0 0"
 				xyz="0.00004053 0.01038395 0.00035532"/>
@@ -262,7 +262,7 @@
 
 	<link name="LeftGripperYawLink">
 		<inertial>
-			<mass value="0.2480"/>
+			<mass value="0.251"/>
 			<origin
 					rpy="0 0 0"
 					xyz="-0.000217 -0.000349 0.009761"/>
