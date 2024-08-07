@@ -551,13 +551,13 @@
 	<joint name="rightGrippertAttachmentFixedJoint" type="fixed">
 		<origin rpy="-3.141592 1.57079632679 3.141592" xyz="0 0 -0.02560000"/>
 		<parent link="RightGripperYawLink"/>
-		<child link="leftNub"/>
+		<child link="rightNub"/>
     </joint>
 	
 	<joint name="leftGrippertAttachmentFixedJoint" type="fixed">
 		<origin rpy="3.141592 1.57079632679 0" xyz="0 0 -0.02560000"/>
 		<parent link="LeftGripperYawLink"/>
-		<child link="rightNub"/>
+		<child link="leftNub"/>
     </joint>	
 	
 	<!-- approximate Numbers -->
