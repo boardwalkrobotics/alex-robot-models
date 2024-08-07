@@ -342,12 +342,12 @@
 		<mass value="0.2480"/>
 		<origin rpy="0 0 0" xyz="-0.00014709 -0.00037325 0.01033255"/>
 		<inertia 
-		ixx="0.00013926" 
-		ixy="3.991e-8" 
-		ixz="4.497e-7" 
-		iyy="0.00014236" 
-		iyz="-7.218e-7" 
-		izz="0.00011005" />
+		ixx="0.00048728" 
+		ixy="6e-7" 
+		ixz="0.0" 
+		iyy="0.00039365" 
+		iyz="0.0" 
+		izz="0.00039397" />
 	  </inertial>
 	  <visual>
 		<geometry>
@@ -528,12 +528,12 @@
 		<mass value="0.2480"/>
 		<origin rpy="0 0 0" xyz="-0.00014709 0.00037325 0.01033255"/>
 		<inertia 
-		ixx="0.00013926" 
-		ixy="3.991e-8" 
-		ixz="4.497e-7" 
-		iyy="0.00014236" 
-		iyz="-7.218e-7" 
-		izz="0.00011005" />
+		ixx="0.00048728" 
+		ixy="6e-7" 
+		ixz="0.0" 
+		iyy="0.00039365" 
+		iyz="0.0" 
+		izz="0.00039397" />
 	  </inertial>
 	  <visual>
 		<geometry>
@@ -542,21 +542,5 @@
 		<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
 	  </visual>
 	</link>
-
-	<!-- Gripper Fixed Joints -->
-	<!-- Z Distance is approximate, Give us a little space to make an attachment plate -->
 	
-	<!--
-	<joint name="rightGrippertAttachmentFixedJoint" type="fixed">
-		<origin rpy="-3.141592 0 3.141592" xyz="0 0 -0.02560000"/>
-		<parent link="RightGripperYawLink"/>
-		<child link="yourRightHandBaseLink"/>
-    </joint>
-	
-	<joint name="leftGrippertAttachmentFixedJoint" type="fixed">
-		<origin rpy="3.141592 0 0" xyz="0 0 -0.02560000"/>
-		<parent link="LeftGripperYawLink"/>
-		<child link="yourLeftHandBaseLink"/>
-    </joint>	
-	-->
 </robot>
