@@ -751,7 +751,7 @@
         <inertial>
             <mass value="0.05"/>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 3.142"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+            <inertia ixx="1e-4" ixy="0.0" ixz="0.0" iyy="1e-4" iyz="0.0" izz="1e-4"/>
         </inertial>
         <visual name="RIGHT_GRIPPER_ROLL1_LINK_visual">
             <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 0.0"/>
@@ -764,7 +764,7 @@
         <inertial>
             <mass value="0.05"/>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+			<inertia ixx="1e-4" ixy="0.0" ixz="0.0" iyy="1e-4" iyz="0.0" izz="1e-4"/>
         </inertial>
         <visual name="RIGHT_GRIPPER_ROLL1_LINK_visual">
             <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 3.142"/>
@@ -777,7 +777,7 @@
         <inertial>
             <mass value="0.05"/>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+			<inertia ixx="1e-4" ixy="0.0" ixz="0.0" iyy="1e-4" iyz="0.0" izz="1e-4"/>
         </inertial>
         <visual name="RIGHT_GRIPPER_ROLL2_LINK_visual">
             <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 0.0"/>
@@ -790,7 +790,7 @@
         <inertial>
             <mass value="0.05"/>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+			<inertia ixx="1e-4" ixy="0.0" ixz="0.0" iyy="1e-4" iyz="0.0" izz="1e-4"/>
         </inertial>
         <visual name="RIGHT_GRIPPER_ROLL1_LINK_visual">
             <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 0.0"/>
@@ -852,7 +852,7 @@
         <inertial>
             <mass value="0.05"/>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+			<inertia ixx="1e-4" ixy="0.0" ixz="0.0" iyy="1e-4" iyz="0.0" izz="1e-4"/>
         </inertial>
         <visual name="LeftSakeBaseFingerLink1Visual">
             <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 3.142"/>
@@ -865,7 +865,7 @@
         <inertial>
             <mass value="0.05"/>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+			<inertia ixx="1e-4" ixy="0.0" ixz="0.0" iyy="1e-4" iyz="0.0" izz="1e-4"/>
         </inertial>
         <visual name="LeftSakeFingerTip1Visual">
             <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 3.142"/>
@@ -878,7 +878,7 @@
         <inertial>
             <mass value="0.05"/>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+			<inertia ixx="1e-4" ixy="0.0" ixz="0.0" iyy="1e-4" iyz="0.0" izz="1e-4"/>
         </inertial>
         <visual name="LeftSakeBaseFingerLink2Visual">
             <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 0.0"/>
@@ -891,7 +891,7 @@
         <inertial>
             <mass value="0.05"/>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+			<inertia ixx="1e-4" ixy="0.0" ixz="0.0" iyy="1e-4" iyz="0.0" izz="1e-4"/>
         </inertial>
         <visual name="LeftSakeFingerTip2Visual">
             <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 0.0"/>

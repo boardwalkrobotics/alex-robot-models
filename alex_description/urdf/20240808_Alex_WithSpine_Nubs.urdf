@@ -10,25 +10,83 @@
 		</inertial>
 		<visual>
 			<geometry>
-<!--				<mesh filename="package://alex_description/meshes/Torso_Base_and_Head.obj"/>-->
-				<mesh filename="package://alex_description/meshes/TorsoFixedBaseWithoutHeadAndSpine.obj"/>
+				<mesh filename="package://alex_description/meshes/Torso.obj"/>
 			</geometry>
 			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.37"/>
 		</visual>
 	</link>
+	<!-- Spine Joints -->
+	<joint name="SpineYaw" type="revolute">
+		<origin rpy="0 0 0" xyz="-0.129 0 0.35" />
+		<axis xyz="0 0 1" />
+		<parent link="Pelvis" />
+		<child link="SpineYawLink" />
+		<limit effort="150" lower="-1.0472" upper="1.0472" velocity = "9.0" />
+		<dynamics damping="0.05" friction="0.0"/>
+    </joint>
+
+	<joint name="SpineRoll" type="revolute">
+		<origin rpy="0 0 0" xyz="-0.08 0 0.12" />
+		<axis xyz="1 0 0" />
+		<parent link="SpineYawLink" />
+		<child link="SpineRollLink" />
+		<limit effort="150.0" lower="-0.436332" upper="0.436332" velocity = "6.0" />
+		<dynamics damping="0.05" friction="0.0"/>
+	</joint>
+
+	<joint name="SpinePitch" type="revolute">
+		<origin rpy="0 0 0" xyz="0.12 0.0 0.0" />
+		<axis xyz="0 1 0" />
+		<parent link="SpineRollLink" />
+		<child link="Torso" />
+		<limit effort="250.0" lower="-0.523599" upper="1.0472" velocity = "6.0" />
+		<dynamics damping="0.05" friction="0.0"/>
+	</joint>
+	
+	<!-- Spine Links -->
+	<link name="SpineYawLink">
+	  <inertial>
+		<mass value="0.91"/>
+		<origin rpy="0 0 0" xyz="-0.00853118 -2.697E-05 0.03791445"/>
+		<inertia ixx="0.00374289408" ixy="1.25497934E-07" ixz="0.000271325072" iyy="0.00403002777" iyz="-1.38015692E-07" izz="0.0062129847" />
+	  </inertial>
+	</link>
+
+	<link name="SpineRollLink">
+	  <inertial>
+		<mass value="0.44"/>
+		<origin rpy="0 0 0" xyz="-0.01904983 7E-08 0.01979244"/>
+		<inertia ixx="0.000373262301" ixy="-1.51441878E-10" ixz="-6.69067307E-05" iyy="0.000649978475" iyz="-1.27858402E-10" izz="0.000419408851" />
+	  </inertial>
+	</link>
+
+	<!-- Torso Link -->
+	<link name="Torso">
+	  <inertial>
+		<mass value="13.5"/>
+		<origin rpy="0 0 0" xyz="-0.03613868 -2.81E-06 0.25908586"/>
+		<inertia ixx="0.534504681" ixy="8.41519717E-05" ixz="-0.00672956305" iyy="0.505409852" iyz="0.000207996773" izz="0.379402013" />
+	  </inertial>
+	  <visual>
+			<geometry>
+				<mesh filename="package://alex_description/meshes/Torso.obj"/>
+			</geometry>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+		  </visual>	
+	</link>
 
 	<!-- Neck Joints -->
 	<joint name="NeckYaw" type="revolute">
-		<origin rpy="0 0 0" xyz="0.0 0.0 0.692" /> <!-- placeholder for the joint location -->
+		<origin rpy="0 0 0" xyz="-0.089094	0.00003	0.324207" /> <!-- placeholder for the joint location -->
 		<axis xyz="0 0 1" />
-		<parent link="Pelvis" />
+		<parent link="Torso" />
 		<child link="NeckYawLink" />
 		<limit effort="20" lower="-1.5708" upper="1.5708" velocity = "20" />
 		<dynamics damping="0.05" friction="0.0"/>
 	</joint>
 
 	<joint name="NeckPitch" type="revolute">
-		<origin rpy="0 0 0" xyz="0.025 0.0 0.173" />
+		<origin rpy="0 0 0" xyz="0.025 -0.027544 0.245212" />
 		<axis xyz="0 1 0" />
 		<parent link="NeckYawLink" />
 		<child link="Head" />
@@ -40,15 +98,9 @@
 	<!-- Inertia data is a placeholder -->
 	<link name="NeckYawLink">
 	  <inertial>
-		<mass value="1.0"/>
-		<origin rpy="0 0 0" xyz="0.0 0.0 0.1"/>
-		<inertia 
-			  ixx="0.0036746953546519796" 
-			  ixy="1.5200537475756135E-5" 
-			  ixz="-1.3155829305043117E-5"
-			  iyy="0.003955455275643572" 
-			  iyz="-9.878441058198549E-5" 
-			  izz="0.0014329681446651732" />    
+		<mass value="0.708"/>
+		<origin rpy="0 0 0" xyz="0.011651 0.010332 0.147202"/>
+		<inertia ixx="0.0063417" ixy="-0.0000441" ixz="-0.0007117" iyy="0.0064004" iyz="-0.0004412" izz="0.0004435" />
 	  </inertial>
 <!--	  &lt;!&ndash;visual>-->
 <!--			<geometry>-->
@@ -61,8 +113,8 @@
 	<link name="Head">
 	 <inertial>
 		<mass value="1.615"/>
-		<origin rpy="0 0 0" xyz="0.01986095 0.00395 0.02836141"/>
-		 <inertia ixx="0.0058084" ixy="-0.0001142" ixz="-0.0007803" iyy="0.0069663" iyz="-0.0001353" izz="0.0063497" />
+		<origin rpy="0 0 0" xyz="0.01967 0.023998 0.022356"/>
+		<inertia ixx="0.0058084" ixy="-0.0001142" ixz="0.0007803" iyy="0.0069663" iyz="-0.0001353" izz="0.0063497" />
 	  </inertial>
 	  <visual>
 			<geometry>
@@ -151,7 +203,7 @@
 	<joint name="LeftShoulderPitch" type="revolute">
 		<origin xyz="-0.0114 0.1 0.570" rpy="0.698132 0.0 0.0"   />
 		<axis xyz="0.0 1.0 0.0" />
-		<parent link="Pelvis" />
+		<parent link="Torso" />
 		<child link="LeftShoulderPitchLink" />
 		<limit effort="150.0" lower="-3.141592" upper="1.22173" velocity = "9.0" />
 		<dynamics damping="0.05" friction="0.0"/>
@@ -307,7 +359,7 @@
 			<inertia ixx="0.000477" ixy="-0.0000079" ixz="-0.0000097" iyy="0.0004902" iyz="-0.0000008" izz="0.000514" />
 		</inertial>
 
-		<visual>
+		<visual> 
 			<geometry>
 				<mesh filename="package://alex_description/meshes/cycloidal_arm/LeftWristRollLink.obj"/>
 			</geometry>
@@ -322,14 +374,7 @@
 			<origin
 					rpy="0 0 0"
 					xyz="-0.000217 -0.000349 0.009761"/>
-
-			<inertia
-					ixx="0.00048728"
-					ixy="6e-7"
-					ixz="0.0"
-					iyy="0.00039365"
-					iyz="0.0"
-					izz="0.00039397" />
+			<inertia ixx="0.0000722" ixy="-0.0000016" ixz="-0.0000037" iyy="0.0000747" iyz="0.0000004" izz="0.0000324" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -443,7 +488,7 @@
 	<joint name="RightShoulderPitch" type="revolute">
 		<origin xyz="-0.0114 -0.1 0.570" rpy="-0.698132 0.0 0.0"   />
 		<axis xyz="0.0 1.0 0.0" />
-		<parent link="Pelvis" />
+		<parent link="Torso" />
 		<child link="RightShoulderPitchLink" />
 		<limit effort="1000" lower="-3.141592" upper="1.22173" velocity = "100" />
 		<dynamics damping="0.05" friction="0.0"/>
@@ -591,13 +636,7 @@
 		<inertial>
 			<mass value="0.251"/>
 			<origin rpy="0 0 0" xyz="-0.000217 -0.000349 0.009761"/>
-			<inertia
-					ixx="0.00048728"
-					ixy="6e-7"
-					ixz="0.0"
-					iyy="0.00039365"
-					iyz="0.0"
-					izz="0.00039397"/>
+			<inertia ixx="0.0000722" ixy="-0.0000016" ixz="-0.0000037" iyy="0.0000747" iyz="0.0000004" izz="0.0000324" />
 		</inertial>
 		<visual>
 			<geometry>
@@ -704,4 +743,57 @@
 			<imu> <!-- placeholder tag for IMU --> </imu>
 		</sensor>
 	</gazebo>
+	
+	<!-- Gripper Fixed Joints -->
+
+	<joint name="LeftGrippertAttachmentFixedJoint" type="fixed">
+		<origin rpy="0 0 0" xyz="0 0 -0.0210000"/>
+		<parent link="LeftGripperYawLink"/>
+		<child link="leftNub"/>
+    </joint>
+		<joint name="RightGrippertAttachmentFixedJoint" type="fixed">
+		<origin rpy="0 0 0" xyz="0 0 -0.0210000"/>
+		<parent link="RightGripperYawLink"/>
+		<child link="rightNub"/>
+    </joint>
+	
+	<link name="leftNub">
+	  <inertial>
+		<mass value="0.1"/>
+		<origin rpy="0 0 0" xyz="0.0 0.0 -0.015"/>
+		<inertia 
+		ixx="0.00048728" 
+		ixy="6e-7" 
+		ixz="0.0" 
+		iyy="0.00039365" 
+		iyz="0.0" 
+		izz="0.00039397" />
+	  </inertial>
+	  <visual>
+		<geometry>
+		  <mesh filename="package://alex_description/meshes/cycloidal_arm/nub.obj"/>
+		</geometry>
+		<origin rpy="0.0 1.57 0.0" xyz="0.0 0.0 0.0"/>
+	  </visual>
+	</link>
+	
+	<link name="rightNub">
+	  <inertial>
+		<mass value="0.1"/>
+		<origin rpy="0 0 0" xyz="0.0 0.0 -0.015"/>
+		<inertia 
+		ixx="0.00048728" 
+		ixy="6e-7" 
+		ixz="0.0" 
+		iyy="0.00039365" 
+		iyz="0.0" 
+		izz="0.00039397" />
+	  </inertial>
+	  <visual>
+		<geometry>
+		  <mesh filename="package://alex_description/meshes/cycloidal_arm/nub.obj"/>
+		</geometry>
+		<origin rpy="0.0 1.57 0.0" xyz="0.0 0.0 0.0"/>
+	  </visual>
+	</link>
 </robot>
