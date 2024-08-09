@@ -1,7 +1,7 @@
 <?xml version = "1.0" ?>
 <robot name="Alex">
 
-	<!-- 8020 Base, Chest and Head -->
+		<!-- 8020 Base, Chest and Head -->
 	<link name="Pelvis">
 		<inertial>
 			<mass value="10.0"/>
@@ -38,31 +38,31 @@
 	<!-- Neck and Head -->
 	<!-- Inertia data is a placeholder -->
 	<link name="NeckYawLink">
-		<inertial>
-			<mass value="0.708"/>
-			<origin rpy="0 0 0" xyz="0.011651 0.010332 0.147202"/>
-			<inertia ixx="0.0063417" ixy="-0.0000441" ixz="-0.0007117" iyy="0.0064004" iyz="-0.0004412" izz="0.0004435" />
-		</inertial>
-		<!--	  &lt;!&ndash;visual>-->
-		<!--			<geometry>-->
-		<!--				<mesh filename="package://alex_description/meshes/NeckYaw.obj"/>-->
-		<!--			</geometry>-->
-		<!--			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>-->
-		<!--	   </visual&ndash;&gt;	-->
+	  <inertial>
+		<mass value="0.708"/>
+		<origin rpy="0 0 0" xyz="0.011651 0.010332 0.147202"/>
+		<inertia ixx="0.0063417" ixy="-0.0000441" ixz="-0.0007117" iyy="0.0064004" iyz="-0.0004412" izz="0.0004435" />
+	  </inertial>
+<!--	  &lt;!&ndash;visual>-->
+<!--			<geometry>-->
+<!--				<mesh filename="package://alex_description/meshes/NeckYaw.obj"/>-->
+<!--			</geometry>-->
+<!--			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>-->
+<!--	   </visual&ndash;&gt;	-->
 	</link>
 
 	<link name="Head">
-		<inertial>
-			<mass value="1.615"/>
-			<origin rpy="0 0 0" xyz="0.01967 0.023998 0.022356"/>
-			<inertia ixx="0.0058084" ixy="-0.0001142" ixz="0.0007803" iyy="0.0069663" iyz="-0.0001353" izz="0.0063497" />
-		</inertial>
-		<visual>
+	 <inertial>
+		<mass value="1.615"/>
+		<origin rpy="0 0 0" xyz="0.01967 0.023998 0.022356"/>
+		<inertia ixx="0.0058084" ixy="-0.0001142" ixz="0.0007803" iyy="0.0069663" iyz="-0.0001353" izz="0.0063497" />
+	  </inertial>
+	  <visual>
 			<geometry>
 				<mesh filename="package://alex_description/meshes/Head.obj"/>
 			</geometry>
 			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-		</visual>
+		  </visual>
 	</link>
 
 	<!-- TORSO IMU's NOTE: We currently have 3 fixed IMU's because we have fixed spine. This will change after we get a working spine-->
@@ -300,7 +300,7 @@
 			<inertia ixx="0.000477" ixy="-0.0000079" ixz="-0.0000097" iyy="0.0004902" iyz="-0.0000008" izz="0.000514" />
 		</inertial>
 
-		<visual>
+		<visual> 
 			<geometry>
 				<mesh filename="package://alex_description/meshes/cycloidal_arm/LeftWristRollLink.obj"/>
 			</geometry>
@@ -687,12 +687,12 @@
 
 	<!-- Gripper Fixed Joints -->
 
-	<joint name="LeftGrippertAttachmentFixedJoint" type="revolute">
+	<joint name="LeftGrippertAttachmentFixedJoint" type="fixed">
 		<origin rpy="0 0 0" xyz="-0.018385 0 -0.01560000"/> <!--<origin rpy="3.141592 0 0" xyz="0 0 -0.02560000"/>-->
 		<parent link="LeftGripperYawLink"/>
 		<child link="LeftPsyonicHand"/>
 	</joint>
-	<joint name="RightGrippertAttachmentFixedJoint" type="revolute">
+	<joint name="RightGrippertAttachmentFixedJoint" type="fixed">
 		<origin rpy="0 0 0" xyz="-0.018385 0 -0.01560000"/> <!--<origin rpy="-3.141592 0 3.141592" xyz="0 0 -0.01560000"/>-->
 		<parent link="RightGripperYawLink"/>
 		<child link="RightPsyonicHand"/>
@@ -711,7 +711,7 @@
 		<visual name="PsyonicLeft">
 			<origin rpy = "0 0 0" xyz="0 0 0"/>
 			<geometry>
-				<mesh filename="package://ability_hand_description/models/PsyonicLeftd.obj"/>
+				<mesh filename="package://ability_hand_description/models/PsyonicLeft.obj"/>
 			</geometry>
 		</visual>
 	</link>
@@ -720,12 +720,12 @@
 		<inertial>	<!-- the mass and inertia here are NOT correct -->
 			<mass value = "0.500"/>
 			<inertia ixx="0.0011067" ixy="0.0001015" ixz="0.0000509" iyy="0.0008085" iyz="0.0000053" izz="0.0004947" />
-			<origin rpy = "0 0 0" xyz="0.004676 -0.006268 -0.063361"/>
+			<origin rpy = "0 0 0" xyz="0.004676 0.006268 -0.063361"/>
 		</inertial>
 		<visual name="PsyonicRight">
 			<origin rpy = "0 0 0" xyz="0 0 0"/>
 			<geometry>
-				<mesh filename="package://ability_hand_description/models/PsyonicRightd.obj"/>
+				<mesh filename="package://ability_hand_description/models/PsyonicRight.obj"/>
 			</geometry>
 		</visual>	
 	</link>
