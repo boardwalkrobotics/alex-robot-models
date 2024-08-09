@@ -8,12 +8,6 @@
 			<origin rpy="0 0 0" xyz="0.02 0.0 -0.02"/>
 			<inertia ixx="0.0942" ixy="6.05E-06" ixz="0.000379" iyy="0.0416" iyz="3.37E-07" izz="0.112" />
 		</inertial>
-		<visual>
-			<geometry>
-				<mesh filename="package://alex_description/meshes/Torso.obj"/>
-			</geometry>
-			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.37"/>
-		</visual>
 	</link>
 	<!-- Spine Joints -->
 	<joint name="SpineYaw" type="revolute">
@@ -77,7 +71,7 @@
 
 	<!-- Neck Joints -->
 	<joint name="NeckYaw" type="revolute">
-		<origin rpy="0 0 0" xyz="-0.089094	0.00003	0.324207" /> <!-- placeholder for the joint location -->
+		<origin rpy="0 0 0" xyz="0.0 -0.00003 0.275793" /> <!-- placeholder for the joint location -->
 		<axis xyz="0 0 1" />
 		<parent link="Torso" />
 		<child link="NeckYawLink" />
@@ -102,12 +96,6 @@
 		<origin rpy="0 0 0" xyz="0.011651 0.010332 0.147202"/>
 		<inertia ixx="0.0063417" ixy="-0.0000441" ixz="-0.0007117" iyy="0.0064004" iyz="-0.0004412" izz="0.0004435" />
 	  </inertial>
-<!--	  &lt;!&ndash;visual>-->
-<!--			<geometry>-->
-<!--				<mesh filename="package://alex_description/meshes/NeckYaw.obj"/>-->
-<!--			</geometry>-->
-<!--			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>-->
-<!--	   </visual&ndash;&gt;	-->
 	</link>
 
 	<link name="Head">
@@ -201,7 +189,7 @@
 	<!-- LEFT ARM -->
 	<!-- left upper arm joints -->
 	<joint name="LeftShoulderPitch" type="revolute">
-		<origin xyz="-0.0114 0.1 0.570" rpy="0.698132 0.0 0.0"   />
+		<origin xyz="-0.025 0.1 0.214" rpy="0.698132 0.0 0.0"   />
 		<axis xyz="0.0 1.0 0.0" />
 		<parent link="Torso" />
 		<child link="LeftShoulderPitchLink" />
@@ -486,7 +474,7 @@
 	<!-- RIGHT ARM -->
 	<!-- Right Upper Arm Joints -->
 	<joint name="RightShoulderPitch" type="revolute">
-		<origin xyz="-0.0114 -0.1 0.570" rpy="-0.698132 0.0 0.0"   />
+		<origin xyz="-0.025 -0.1 0.214" rpy="-0.698132 0.0 0.0"   />
 		<axis xyz="0.0 1.0 0.0" />
 		<parent link="Torso" />
 		<child link="RightShoulderPitchLink" />

@@ -723,7 +723,7 @@
 			<origin rpy = "0 0 0" xyz="0.004676 0.006268 -0.063361"/>
 		</inertial>
 		<visual name="PsyonicRight">
-			<origin rpy = "0 0 0" xyz="0 0 0"/>
+			<origin rpy = "0 0 3.14" xyz="0 0 0"/>
 			<geometry>
 				<mesh filename="package://ability_hand_description/models/PsyonicRight.obj"/>
 			</geometry>
