@@ -762,6 +762,10 @@
 			<mass value="3.956"/>
 			<inertia ixx="0.03371325" ixy="0.0" ixz="0.0" iyy="0.00739373" iyz="0.0" izz="0.03371325"/>
 
+			<!-- 6.25 kg dumbbell (two 2.5 lb plates) -->
+			<!--<mass value="6.224"/>-->
+			<!--<inertia ixx="0.05453576" ixy="0.0" ixz="0.0" iyy="0.01465133" iyz="0.0" izz="0.05453576"/>-->
+
 			<!-- 8.5 kg dumbbell (7.5 lb plates) -->
 			<!--<mass value="8.49188"/>-->
 			<!-- <inertia ixx="0.07315278" ixy="0.0" ixz="0.0" iyy="0.02190854" iyz="0.0" izz="0.07315278"/> -->
@@ -786,6 +790,10 @@
 			<!-- 4 kg dumbbell (2.5 lb plates) -->
 			<mass value="3.956"/>
 			<inertia ixx="0.03371325" ixy="0.0" ixz="0.0" iyy="0.00739373" iyz="0.0" izz="0.03371325"/>
+
+			<!-- 6.25 kg dumbbell (two 2.5 lb plates) -->
+			<!--<mass value="6.224"/>-->
+			<!--<inertia ixx="0.05453576" ixy="0.0" ixz="0.0" iyy="0.01465133" iyz="0.0" izz="0.05453576"/>-->
 
 			<!-- 8.5 kg dumbbell (7.5 lb plates) -->
 			<!--<mass value="8.49188"/>-->
