@@ -757,29 +757,55 @@
 
 	<link name="RightHandDumbbellLink">
 		<inertial>
-			<mass value="3.956"/>
-			<!--<mass value="8.49188"/>-->
-			<!--<mass value="10.75984"/>-->
 			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<!-- 4 kg dumbbell (2.5 lb plates) -->
+			<mass value="3.956"/>
 			<inertia ixx="0.03371325" ixy="0.0" ixz="0.0" iyy="0.00739373" iyz="0.0" izz="0.03371325"/>
+
+			<!-- 8.5 kg dumbbell (7.5 lb plates) -->
+			<!--<mass value="8.49188"/>-->
 			<!-- <inertia ixx="0.07315278" ixy="0.0" ixz="0.0" iyy="0.02190854" iyz="0.0" izz="0.07315278"/> -->
+
+			<!-- 11 kg dumbbell (10 lb plates) -->
+			<!--<mass value="10.708"/>-->
+			<!--<inertia ixx="0.10382634" ixy="0.0" ixz="0.0" iyy="0.04523613" iyz="0.0" izz="0.10382634"/> -->
+
+			<!-- 13 kg dumbbell (10 and 2.5 lb plates) -->
+			<!--<mass value="12.976"/>-->
+			<!--<inertia ixx="0.13016235" ixy="0.0" ixz="0.0" iyy="0.05249373" iyz="0.0" izz="0.13016235"/> -->
+
+			<!-- 7.5 and 2.5 lb plates -->
+			<!--<mass value="10.75984"/>-->
 			<!--<inertia ixx="0.10145919" ixy="0.0" ixz="0.0" iyy="0.02916602" iyz="0.0" izz="0.10145919"/> -->
 		</inertial>
 	</link>
-	
+
 	<link name="LeftHandDumbbellLink">
 		<inertial>
-			<mass value="3.956"/>
-			<!-- <mass value="8.49188"/> -->
-			<!-- <mass value="10.75984"/> -->
 			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<!-- 4 kg dumbbell (2.5 lb plates) -->
+			<mass value="3.956"/>
 			<inertia ixx="0.03371325" ixy="0.0" ixz="0.0" iyy="0.00739373" iyz="0.0" izz="0.03371325"/>
+
+			<!-- 8.5 kg dumbbell (7.5 lb plates) -->
+			<!--<mass value="8.49188"/>-->
 			<!-- <inertia ixx="0.07315278" ixy="0.0" ixz="0.0" iyy="0.02190854" iyz="0.0" izz="0.07315278"/> -->
-			<!-- <inertia ixx="0.10145919" ixy="0.0" ixz="0.0" iyy="0.02916602" iyz="0.0" izz="0.10145919"/> -->
+
+			<!-- 11 kg dumbbell (10 lb plates) -->
+			<!--<mass value="10.708"/>-->
+			<!--<inertia ixx="0.10382634" ixy="0.0" ixz="0.0" iyy="0.04523613" iyz="0.0" izz="0.10382634"/> -->
+
+			<!-- 13 kg dumbbell (10 and 2.5 lb plates) -->
+			<!--<mass value="12.976"/>-->
+			<!--<inertia ixx="0.13016235" ixy="0.0" ixz="0.0" iyy="0.05249373" iyz="0.0" izz="0.13016235"/> -->
+
+			<!-- 7.5 and 2.5 lb plates -->
+			<!--<mass value="10.75984"/>-->
+			<!--<inertia ixx="0.10145919" ixy="0.0" ixz="0.0" iyy="0.02916602" iyz="0.0" izz="0.10145919"/> -->
 		</inertial>
 	</link>
 
-	<!-- ~~~~~~~~~~ BARETT HAND LINKS ~~~~~~~~~~ -->
+	<!-- ~~~~~~~~~~ BARRETT HAND LINKS ~~~~~~~~~~ -->
 	<link name="bh280/hand_base">
 		<inertial>
 			<origin xyz="5.0019e-005 -0.0044561 0.037268"/>
