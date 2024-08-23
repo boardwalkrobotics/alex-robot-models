@@ -714,7 +714,7 @@
         </visual>
     </link>
 	
-	<joint name="RightSakeBaseFingerJoint1" type="fixed">
+	<joint name="RightSakeBaseFingerJoint1" type="revolute">
         <origin xyz="0.0 0.0299 -0.0754" rpy="-0.25 0.0 0.0"/>
         <axis xyz="1.0 0.0 0.0"/>
         <parent link="RightSakePalmLink"/>
@@ -730,7 +730,7 @@
         <dynamics damping="0.05" friction="0.0"/>
         <limit effort="1.0" lower="-1.0" upper="0.0" velocity="3.67"/>
     </joint>
-    <joint name="RightSakeBaseFingerJoint2" type="fixed">
+    <joint name="RightSakeBaseFingerJoint2" type="revolute">
         <origin xyz="0.0 -0.0299 -0.0754" rpy="0.25 0.0 0.0"/>
         <axis xyz="-1.0 0.0 0.0"/>
         <parent link="RightSakePalmLink"/>
@@ -815,7 +815,7 @@
         </visual>
     </link>
 	
-	<joint name="LeftSakeBaseFingerJoint1" type="fixed">
+	<joint name="LeftSakeBaseFingerJoint1" type="revolute">
         <origin xyz="0.0 0.0299 -0.0754" rpy="-0.25 0.0 0.0"/>
         <axis xyz="1.0 0.0 0.0"/>
         <parent link="LeftSakePalmLink"/>
@@ -831,7 +831,7 @@
         <dynamics damping="0.05" friction="0.0"/>
         <limit effort="1.0" lower="-1.0" upper="0.0" velocity="3.67"/>
     </joint>
-    <joint name="LeftSakeBaseFingerJoint2" type="fixed">
+    <joint name="LeftSakeBaseFingerJoint2" type="revolute">
         <origin xyz="0.0 -0.0299 -0.0754" rpy="0.25 0.0 0.0"/>
         <axis xyz="-1.0 0.0 0.0"/>
         <parent link="LeftSakePalmLink"/>
