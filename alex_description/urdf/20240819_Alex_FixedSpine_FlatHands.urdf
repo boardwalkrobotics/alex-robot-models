@@ -704,8 +704,8 @@
         <inertial>
             <mass value="0.3"/>
             <origin rpy="0 0 0" xyz="0.0 0.026463 -0.06227"/>
-			<!-- Artificially reduced ixy and iyz by an order of magnitude because the inertia tensor was ill conditioned. -->
-            <inertia ixx="4.97311e-4" ixy="2.793e-5" ixz="-1.15e-7" iyy="3.66606e-4" iyz="1.3979e-5" izz="2.53076e-4" />
+			<!-- Inertia tensor is ill conditioned. Can reduced ixy and iyz by an order of magnitude to see inertia ellipsoids. -->
+            <inertia ixx="4.97311e-4" ixy="2.793e-4" ixz="-1.15e-7" iyy="3.66606e-4" iyz="1.3979e-4" izz="2.53076e-4" />
         </inertial>
         <visual name="RightFlatHandVisual">
 			<origin rpy="0 1.57079632679 3.14159265359" xyz="0.0 0.0 0.0"/>
@@ -720,8 +720,8 @@
         <inertial>
             <mass value="0.3"/>
 			<origin rpy="0 0 0" xyz="0.0 -0.026463 -0.06227"/>
-			<!-- Artificially reduced ixy and iyz by an order of magnitude because the inertia tensor was ill conditioned. -->
-			<inertia ixx="4.97e-4" ixy="-2.793e-5" ixz="1.15e-7" iyy="3.666e-4" iyz="-1.398e-5" izz="2.531e-4" />
+			<!-- Inertia tensor is ill conditioned. Can reduced ixy and iyz by an order of magnitude to see inertia ellipsoids. -->
+			<inertia ixx="4.97e-4" ixy="-2.793e-4" ixz="1.15e-7" iyy="3.666e-4" iyz="-1.398e-4" izz="2.531e-4" />
         </inertial>
         <visual name="LeftFlatHandVisual">
 			<origin rpy="0 1.57079632679 0" xyz="0.0 0.0 0.0"/>
