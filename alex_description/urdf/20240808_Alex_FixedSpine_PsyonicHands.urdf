@@ -18,7 +18,7 @@
 
 	<!-- Neck Joints -->
 	<joint name="NeckYaw" type="revolute">
-		<origin rpy="0 0 0" xyz="0.000094 -0.000003 0.625793" /> <!-- placeholder for the joint location -->
+		<origin rpy="0 0 0" xyz="0.000094 -0.000003 0.462793" /> <!-- placeholder for the joint location -->
 		<axis xyz="0 0 1" />
 		<parent link="Pelvis" />
 		<child link="NeckYawLink" />
@@ -142,7 +142,7 @@
 	<!-- LEFT ARM -->
 	<!-- left upper arm joints -->
 	<joint name="LeftShoulderPitch" type="revolute">
-		<origin xyz="-0.0114 0.1 0.570" rpy="0.698132 0.0 0.0"   />
+		<origin xyz="-0.0114 0.1 0.407" rpy="0.698132 0.0 0.0"   />
 		<axis xyz="0.0 1.0 0.0" />
 		<parent link="Pelvis" />
 		<child link="LeftShoulderPitchLink" />
@@ -427,7 +427,7 @@
 	<!-- RIGHT ARM -->
 	<!-- Right Upper Arm Joints -->
 	<joint name="RightShoulderPitch" type="revolute">
-		<origin xyz="-0.0114 -0.1 0.570" rpy="-0.698132 0.0 0.0"   />
+		<origin xyz="-0.0114 -0.1 0.407" rpy="-0.698132 0.0 0.0"   />
 		<axis xyz="0.0 1.0 0.0" />
 		<parent link="Pelvis" />
 		<child link="RightShoulderPitchLink" />
