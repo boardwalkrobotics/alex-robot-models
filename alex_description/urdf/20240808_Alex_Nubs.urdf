@@ -87,108 +87,72 @@
 		</visual>
 	</link>
 
-	<!-- Neck Joints -->
-	<joint name="NeckYaw" type="revolute">
-		<origin rpy="0 0 0" xyz="0 0 0.307953" /> <!-- placeholder for the joint location -->
-		<axis xyz="0 0 1" />
-		<parent link="Torso" />
-		<child link="NeckYawLink" />
-		<limit effort="20" lower="-1.5708" upper="1.5708" velocity = "20" />
-		<dynamics damping="0.05" friction="0.0"/>
-	</joint>
+<!--	&lt;!&ndash; Neck Joints &ndash;&gt;-->
+<!--	<joint name="NeckYaw" type="revolute">-->
+<!--		<origin rpy="0 0 0" xyz="0 0 0.307953" /> &lt;!&ndash; placeholder for the joint location &ndash;&gt;-->
+<!--		<axis xyz="0 0 1" />-->
+<!--		<parent link="Torso" />-->
+<!--		<child link="NeckYawLink" />-->
+<!--		<limit effort="20" lower="-1.5708" upper="1.5708" velocity = "20" />-->
+<!--		<dynamics damping="0.05" friction="0.0"/>-->
+<!--	</joint>-->
 
-	<joint name="NeckPitch" type="revolute">
-		<origin rpy="0 0 0" xyz="0.025 0.01 0.207252" />
-		<axis xyz="0 1 0" />
-		<parent link="NeckYawLink" />
-		<child link="Head" />
-		<limit effort="20" lower="-1.0472" upper="1.0472" velocity = "20" />
-		<dynamics damping="0.05" friction="0.0"/>
-	</joint>
+<!--	<joint name="NeckPitch" type="revolute">-->
+<!--		<origin rpy="0 0 0" xyz="0.025 0.01 0.207252" />-->
+<!--		<axis xyz="0 1 0" />-->
+<!--		<parent link="NeckYawLink" />-->
+<!--		<child link="Head" />-->
+<!--		<limit effort="20" lower="-1.0472" upper="1.0472" velocity = "20" />-->
+<!--		<dynamics damping="0.05" friction="0.0"/>-->
+<!--	</joint>-->
 
 	<!-- Neck and Head -->
 	<!-- Inertia data is a placeholder -->
-	<link name="NeckYawLink">
-		<inertial>
-			<mass value="1.141"/>
-			<origin rpy="0 0 0" xyz="0.007143 0.006943 0.109823"/>
-			<inertia ixx="0.007475898" ixy="-0.000075723" ixz="-0.000745362" iyy="0.007407578" iyz="-0.000436948" izz="0.00109269" />
-		</inertial>
-		<visual>
-			<geometry>
-				<mesh filename="package://alex_description/meshes/ALX02_01_A03_NeckLink.obj"/>
-			</geometry>
-			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-		</visual>
-	</link>
+<!--	<link name="NeckYawLink">-->
+<!--		<inertial>-->
+<!--			<mass value="1.141"/>-->
+<!--			<origin rpy="0 0 0" xyz="0.007143 0.006943 0.109823"/>-->
+<!--			<inertia ixx="0.007475898" ixy="-0.000075723" ixz="-0.000745362" iyy="0.007407578" iyz="-0.000436948" izz="0.00109269" />-->
+<!--		</inertial>-->
+<!--		<visual>-->
+<!--			<geometry>-->
+<!--				<mesh filename="package://alex_description/meshes/ALX02_01_A03_NeckLink.obj"/>-->
+<!--			</geometry>-->
+<!--			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>-->
+<!--		</visual>-->
+<!--	</link>-->
 
-	<link name="Head">
-		<inertial>
-			<mass value="1.677"/>
-			<origin rpy="0 0 0" xyz="0.03237 -0.013568 0.007163"/>
-			<inertia ixx="0.006026191" ixy="-0.000197484" ixz="0.001813659" iyy="0.008182071" iyz="-0.000042529" izz="0.00644909"/>
-		</inertial>
-		<visual>
-			<geometry>
-				<mesh filename="package://alex_description/meshes/ALX02_01_A02_HeadLink.obj"/>
-			</geometry>
-			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-		</visual>
-	</link>
+<!--	<link name="Head">-->
+<!--		<inertial>-->
+<!--			<mass value="1.677"/>-->
+<!--			<origin rpy="0 0 0" xyz="0.03237 -0.013568 0.007163"/>-->
+<!--			<inertia ixx="0.006026191" ixy="-0.000197484" ixz="0.001813659" iyy="0.008182071" iyz="-0.000042529" izz="0.00644909"/>-->
+<!--		</inertial>-->
+<!--		<visual>-->
+<!--			<geometry>-->
+<!--				<mesh filename="package://alex_description/meshes/ALX02_01_A02_HeadLink.obj"/>-->
+<!--			</geometry>-->
+<!--			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>-->
+<!--		</visual>-->
+<!--	</link>-->
 
 	<!-- TORSO IMU's NOTE: We currently have 3 fixed IMU's because we have fixed spine. This will change after we get a working spine-->
-	<!-- TorsoLeftIMU-->
-	<link name="TorsoLeftIMULink">
-		<inertial>
-			<mass value="0"/>
-			<origin rpy="0 0 0" xyz="0 0 0"/>
-			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
-		</inertial>
-	</link>
-	<joint name="TorsoLeftIMUJoint" type="fixed">
-		<origin rpy="1.570796 0 -1.570796" xyz="-0.102655 0.034047 0.488646"/>
-		<axis xyz="0 0 1"/>
-		<parent link="Pelvis"/>
-		<child link="TorsoLeftIMULink"/>
-	</joint>
-	<gazebo reference="TorsoLeftIMULink">
-		<sensor name="TorsoLeftIMU" type="imu">
-			<always_on>true</always_on>
-			<imu>
-				<noise>
-					<type>gaussian</type>
-					<rate>
-						<mean>0</mean>
-						<stddev>0.0002</stddev>
-						<bias_mean>7.5e-06</bias_mean>
-						<bias_stddev>8e-07</bias_stddev>
-					</rate>
-					<accel>
-						<mean>0</mean>
-						<stddev>0.017</stddev>
-						<bias_mean>0.1</bias_mean>
-						<bias_stddev>0.001</bias_stddev>
-					</accel>
-				</noise>
-			</imu>
-		</sensor>
-	</gazebo>
 	<!-- TorsoRightIMU-->
-	<link name="TorsoRightIMULink">
+	<link name="TorsoIMULink">
 		<inertial>
 			<mass value="0"/>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
 		</inertial>
 	</link>
-	<joint name="TorsoRightIMUJoint" type="fixed">
+	<joint name="TorsoIMUJoint" type="fixed">
 		<origin rpy="1.570796 0 -1.570796" xyz="-0.105655 -0.059053 0.488646"/>
 		<axis xyz="0 0 1"/>
-		<parent link="Pelvis"/>
-		<child link="TorsoRightIMULink"/>
+		<parent link="Torso"/>
+		<child link="TorsoIMULink"/>
 	</joint>
-	<gazebo reference="TorsoRightIMULink">
-		<sensor name="TorsoRightIMU" type="imu">
+	<gazebo reference="TorsoIMULink">
+		<sensor name="TorsoIMU" type="imu">
 			<always_on>true</always_on>
 			<imu>
 				<noise>
@@ -371,7 +335,7 @@
 			<inertia ixx="0.000477" ixy="-0.0000079" ixz="-0.0000097" iyy="0.0004902" iyz="-0.0000008" izz="0.000514" />
 		</inertial>
 
-		<visual> 
+		<visual>
 			<geometry>
 				<mesh filename="package://alex_description/meshes/cycloidal_arm/LeftWristRollLink.obj"/>
 			</geometry>
@@ -755,7 +719,7 @@
 			<imu> <!-- placeholder tag for IMU --> </imu>
 		</sensor>
 	</gazebo>
-	
+
 	<!-- Gripper Fixed Joints -->
 
 	<joint name="LeftGrippertAttachmentFixedJoint" type="fixed">
@@ -768,17 +732,17 @@
 		<parent link="RightGripperYawLink"/>
 		<child link="rightNub"/>
     </joint>
-	
+
 	<link name="leftNub">
 	  <inertial>
 		<mass value="0.1"/>
 		<origin rpy="0 0 0" xyz="0.0 0.0 -0.015"/>
-		<inertia 
-		ixx="0.00048728" 
-		ixy="6e-7" 
-		ixz="0.0" 
-		iyy="0.00039365" 
-		iyz="0.0" 
+		<inertia
+		ixx="0.00048728"
+		ixy="6e-7"
+		ixz="0.0"
+		iyy="0.00039365"
+		iyz="0.0"
 		izz="0.00039397" />
 	  </inertial>
 	  <visual>
@@ -788,17 +752,17 @@
 		<origin rpy="0.0 1.57 0.0" xyz="0.0 0.0 0.0"/>
 	  </visual>
 	</link>
-	
+
 	<link name="rightNub">
 	  <inertial>
 		<mass value="0.1"/>
 		<origin rpy="0 0 0" xyz="0.0 0.0 -0.015"/>
-		<inertia 
-		ixx="0.00048728" 
-		ixy="6e-7" 
-		ixz="0.0" 
-		iyy="0.00039365" 
-		iyz="0.0" 
+		<inertia
+		ixx="0.00048728"
+		ixy="6e-7"
+		ixz="0.0"
+		iyy="0.00039365"
+		iyz="0.0"
 		izz="0.00039397" />
 	  </inertial>
 	  <visual>
