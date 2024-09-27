@@ -136,8 +136,7 @@
 		</visual>
 	</link>
 
-	<!-- TORSO IMU's NOTE: We currently have 3 fixed IMU's because we have fixed spine. This will change after we get a working spine-->
-	<!-- TorsoLeftIMU-->
+	<!-- TorsoLeftIMU - On top of the Left J1 motor controller board -->
 	<link name="TorsoLeftIMULink">
 		<inertial>
 			<mass value="0"/>
@@ -146,9 +145,9 @@
 		</inertial>
 	</link>
 	<joint name="TorsoLeftIMUJoint" type="fixed">
-		<origin rpy="1.570796 0 -1.570796" xyz="-0.102655 0.034047 0.488646"/>
+		<origin rpy="1.5707963267948966 -0.6981317007977316 1.5707963267948961" xyz="0.07978495 0.10932294  0.17623744"/>
 		<axis xyz="0 0 1"/>
-		<parent link="Pelvis"/>
+		<parent link="Torso"/>
 		<child link="TorsoLeftIMULink"/>
 	</joint>
 	<gazebo reference="TorsoLeftIMULink">
@@ -173,7 +172,9 @@
 			</imu>
 		</sensor>
 	</gazebo>
-	<!-- TorsoRightIMU-->
+	
+	
+	<!-- TorsoRightIMU - On top of the Right J1 motor controller board-->
 	<link name="TorsoRightIMULink">
 		<inertial>
 			<mass value="0"/>
@@ -182,13 +183,51 @@
 		</inertial>
 	</link>
 	<joint name="TorsoRightIMUJoint" type="fixed">
-		<origin rpy="1.570796 0 -1.570796" xyz="-0.105655 -0.059053 0.488646"/>
+		<origin rpy="1.5707963267948966 0.6981317007977319 1.5707963267948966" xyz="0.07978495 -0.09055680 0.16048643"/>
 		<axis xyz="0 0 1"/>
-		<parent link="Pelvis"/>
+		<parent link="Torso"/>
 		<child link="TorsoRightIMULink"/>
 	</joint>
 	<gazebo reference="TorsoRightIMULink">
 		<sensor name="TorsoRightIMU" type="imu">
+			<always_on>true</always_on>
+			<imu>
+				<noise>
+					<type>gaussian</type>
+					<rate>
+						<mean>0</mean>
+						<stddev>0.0002</stddev>
+						<bias_mean>7.5e-06</bias_mean>
+						<bias_stddev>8e-07</bias_stddev>
+					</rate>
+					<accel>
+						<mean>0</mean>
+						<stddev>0.017</stddev>
+						<bias_mean>0.1</bias_mean>
+						<bias_stddev>0.001</bias_stddev>
+					</accel>
+				</noise>
+			</imu>
+		</sensor>
+	</gazebo>
+	
+	<!-- NeckPitchIMU-->
+	<!-- this is an IMU on top of the spine yaw motor controller board-->
+	<link name="NeckBaseIMULink">
+		<inertial>
+			<mass value="0"/>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+		</inertial>
+	</link>
+	<joint name="NeckBaseIMUJoint" type="fixed">
+		<origin rpy="0 0 -1.5707963267948966" xyz="0.00399725 -0.01225021 0.24512039"/>
+		<axis xyz="0 0 1"/>
+		<parent link="Torso"/>
+		<child link="NeckBaseIMULink"/>
+	</joint>
+	<gazebo reference="NeckBaseIMULink">
+		<sensor name="NeckBaseIMU" type="imu">
 			<always_on>true</always_on>
 			<imu>
 				<noise>
