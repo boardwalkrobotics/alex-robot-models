@@ -16,7 +16,7 @@
 		</visual>
 	</link>
 	<!-- Spine Joints -->
-	<joint name="SpineYaw" type="revolute">
+	<joint name="SpineYaw" type="fixed">
 		<origin rpy="0 0 0" xyz="0 0 0.1045" />
 		<axis xyz="0 0 1" />
 		<parent link="Pelvis" />
