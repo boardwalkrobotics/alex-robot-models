@@ -16,7 +16,7 @@
 		</visual>
 	</link>
 	<!-- Spine Joints -->
-	<joint name="SpineYaw" type="revolute">
+	<joint name="SpineYaw" type="fixed">
 		<origin rpy="0 0 0" xyz="0 0 0.1045" />
 		<axis xyz="0 0 1" />
 		<parent link="Pelvis" />
@@ -87,22 +87,23 @@
 		</visual>
 	</link>
 
-	<!-- Torso IMU-->
-	<link name="TorsoIMULink">
+	<!-- TORSO IMU's NOTE: The torso IMUs are redundant-->
+	<!-- Torso Left IMU. Currently not used for anything-->
+	<link name="TorsoLeftIMULink">
 		<inertial>
 			<mass value="0"/>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
 			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
 		</inertial>
 	</link>
-	<joint name="TorsoIMUJoint" type="fixed">
-		<origin rpy="0 0 -1.5707963267948966" xyz="0.00399725 -0.01225021 0.24512039"/>
+	<joint name="TorsoLeftIMUJoint" type="fixed">
+		<origin rpy="1.5707963267948966 -0.6981317007977316 1.5707963267948961" xyz="0.07978495 0.10932294 0.17623744"/>
 		<axis xyz="0 0 1"/>
 		<parent link="Torso"/>
-		<child link="TorsoIMULink"/>
+		<child link="TorsoLeftIMULink"/>
 	</joint>
-	<gazebo reference="TorsoIMULink">
-		<sensor name="TorsoIMU" type="imu">
+	<gazebo reference="TorsoLeftIMULink">
+		<sensor name="TorsoLeftIMU" type="imu">
 			<always_on>true</always_on>
 			<imu>
 				<noise>
@@ -124,8 +125,45 @@
 		</sensor>
 	</gazebo>
 
-	<!-- NeckPitchIMU-->
-	<!-- this is an IMU on top of the spine yaw motor controller board-->
+	<!-- Torso Right IMU. Currently not used for anything-->
+	<link name="TorsoRightIMULink">
+		<inertial>
+			<mass value="0"/>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+		</inertial>
+	</link>
+	<joint name="TorsoRightIMUJoint" type="fixed">
+		<origin rpy="1.5707963267948966 0.6981317007977319 1.5707963267948966" xyz="0.07978495 -0.09055680 0.16048643"/>
+		<axis xyz="0 0 1"/>
+		<parent link="Torso"/>
+		<child link="TorsoRightIMULink"/>
+	</joint>
+	<gazebo reference="TorsoRightIMULink">
+		<sensor name="TorsoRightIMU" type="imu">
+			<always_on>true</always_on>
+			<imu>
+				<noise>
+					<type>gaussian</type>
+					<rate>
+						<mean>0</mean>
+						<stddev>0.0002</stddev>
+						<bias_mean>7.5e-06</bias_mean>
+						<bias_stddev>8e-07</bias_stddev>
+					</rate>
+					<accel>
+						<mean>0</mean>
+						<stddev>0.017</stddev>
+						<bias_mean>0.1</bias_mean>
+						<bias_stddev>0.001</bias_stddev>
+					</accel>
+				</noise>
+			</imu>
+		</sensor>
+	</gazebo>
+
+	<!-- NeckBaseIMU-->
+	<!-- this is an IMU on top of the Neck yaw motor controller board-->
 	<link name="NeckBaseIMULink">
 		<inertial>
 			<mass value="0"/>
