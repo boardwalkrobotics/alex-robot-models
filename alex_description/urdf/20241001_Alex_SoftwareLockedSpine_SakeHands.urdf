@@ -162,6 +162,55 @@
 		</sensor>
 	</gazebo>
 
+	<!-- Neck Joints -->
+	<joint name="NeckYaw" type="revolute">
+		<origin rpy="0 0 0" xyz="0 0 0.307953" /> <!-- placeholder for the joint location -->
+		<axis xyz="0 0 1" />
+		<parent link="Torso" />
+		<child link="NeckYawLink" />
+		<limit effort="20" lower="-1.5708" upper="1.5708" velocity = "20" />
+		<dynamics damping="0.05" friction="0.0"/>
+	</joint>
+
+	<joint name="NeckPitch" type="revolute">
+		<origin rpy="0 0 0" xyz="0.025 0.01 0.207252" />
+		<axis xyz="0 1 0" />
+		<parent link="NeckYawLink" />
+		<child link="Head" />
+		<limit effort="20" lower="-1.0472" upper="1.0472" velocity = "20" />
+		<dynamics damping="0.05" friction="0.0"/>
+	</joint>
+
+	<!--	 Neck and Head -->
+	<!--	 Inertia data is a placeholder -->
+	<link name="NeckYawLink">
+		<inertial>
+			<mass value="1.141"/>
+			<origin rpy="0 0 0" xyz="0.007143 0.006943 0.109823"/>
+			<inertia ixx="0.007475898" ixy="-0.000075723" ixz="-0.000745362" iyy="0.007407578" iyz="-0.000436948" izz="0.00109269" />
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="package://alex_description/meshes/ALX02_01_A03_NeckLink.obj"/>
+			</geometry>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+		</visual>
+	</link>
+
+	<link name="Head">
+		<inertial>
+			<mass value="1.677"/>
+			<origin rpy="0 0 0" xyz="0.03237 -0.013568 0.007163"/>
+			<inertia ixx="0.006026191" ixy="-0.000197484" ixz="0.001813659" iyy="0.008182071" iyz="-0.000042529" izz="0.00644909"/>
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="package://alex_description/meshes/ALX02_01_A02_HeadLink.obj"/>
+			</geometry>
+			<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+		</visual>
+	</link>
+
 	<!-- NeckBaseIMU-->
 	<!-- this is an IMU on top of the Neck yaw motor controller board-->
 	<link name="NeckBaseIMULink">
