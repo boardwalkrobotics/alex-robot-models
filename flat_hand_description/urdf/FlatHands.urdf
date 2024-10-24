@@ -1,0 +1,49 @@
+<?xml version = "1.0" ?>
+<robot name="Alex">
+	
+	<!-- Gripper Fixed Joints -->
+
+	<joint name="LeftGrippertAttachmentFixedJoint" type="fixed">
+		<origin rpy="0 0 0" xyz="0 0 -0.0210000"/>
+		<parent link="LeftGripperYawLink"/>
+		<child link="LeftFlatHand"/>
+    </joint>
+		<joint name="RightGrippertAttachmentFixedJoint" type="fixed">
+		<origin rpy="0 0 0" xyz="0 0 -0.0210000"/>
+		<parent link="RightGripperYawLink"/>
+		<child link="RightFlatHand"/>
+    </joint>
+	
+	<!-- HAND LINKS -->
+	<!-- Right Flat Hand -->
+	<link name="RightFlatHand">
+        <inertial>
+            <mass value="0.3"/>
+            <origin rpy="0 0 0" xyz="0.0 0.026463 -0.06227"/>
+			<!-- Inertia tensor is ill conditioned. Can reduced ixy and iyz by an order of magnitude to see inertia ellipsoids. -->
+            <inertia ixx="4.97311e-4" ixy="2.793e-4" ixz="-1.15e-7" iyy="3.66606e-4" iyz="1.3979e-4" izz="2.53076e-4" />
+        </inertial>
+        <visual name="RightFlatHandVisual">
+			<origin rpy="0 1.57079632679 3.14159265359" xyz="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://flat_hand_description/meshes/FlatHands.obj"/>
+            </geometry>
+        </visual>
+    </link>
+
+	<!-- Left Flat Hand -->
+	<link name="LeftFlatHand">
+        <inertial>
+            <mass value="0.3"/>
+			<origin rpy="0 0 0" xyz="0.0 -0.026463 -0.06227"/>
+			<!-- Inertia tensor is ill conditioned. Can reduced ixy and iyz by an order of magnitude to see inertia ellipsoids. -->
+			<inertia ixx="4.97e-4" ixy="-2.793e-4" ixz="1.15e-7" iyy="3.666e-4" iyz="-1.398e-4" izz="2.531e-4" />
+        </inertial>
+        <visual name="LeftFlatHandVisual">
+			<origin rpy="0 1.57079632679 0" xyz="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://flat_hand_description/meshes/FlatHands.obj"/>
+            </geometry>
+        </visual>
+    </link>
+</robot>
