@@ -76,9 +76,7 @@
 	<link name="Torso">
 		<inertial>
 			<mass value="17.574"/>
-			<!--  Fudged the center of mass location a little to see if CAD was wrong. Original is on top. -->
-<!--			<origin rpy="0 0 0" xyz="0.003673 0.000059 0.160289"/>-->
-			<origin rpy="0 0 0" xyz="-0.02 0.000059 0.170289"/>
+			<origin rpy="0 0 0" xyz="0.003673 0.000059 0.160289"/>
 			<inertia ixx="0.24725248" ixy="-0.000080922" ixz="0.000927935" iyy="0.158680043" iyz="0.000328726" izz="0.153487995"/>
 		</inertial>
 		<visual>
